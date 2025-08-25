@@ -1,22 +1,174 @@
-<!doctype html>
-<html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro Basics</title>
-	</head>
-	<body>
-		<slot />
-	</body>
-</html>
+---
+import "../styles/global.css";
+import Header from "../components/Header.astro";
+---
 
-<style>
-	html,
-	body {
-		margin: 0;
-		width: 100%;
-		height: 100%;
-	}
-</style>
+<!doctype html>
+<html lang="es" class="scroll-smooth">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+        <!-- Preconnect for performance -->
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        
+        <!-- Preload Montserrat Variable font -->
+        <link rel="preload" href="/node_modules/@fontsource-variable/montserrat/files/montserrat-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin />
+        
+        <!-- Font display optimization -->
+        <style is:inline>
+            @font-face {
+                font-family: 'Montserrat Variable';
+                font-style: normal;
+                font-display: swap;
+                font-weight: 100 900;
+                src: url('/node_modules/@fontsource-variable/montserrat/files/montserrat-latin-wght-normal.woff2') format('woff2-variations');
+            }
+        </style>
+
+        <!-- Favicon -->
+        <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+        <meta name="generator" content={Astro.generator} />
+
+        <!-- SEO Meta Tags -->
+        <title>Defensa Jurídica Sur | Abogados Puerto Montt | Asesoría Legal Especializada</title>
+        <meta
+            name="description"
+            content="Bufete de abogados especializado en defensa legal y derecho corporativo en Puerto Montt. Más de 20 años de experiencia. Consulta gratuita. Contacta hoy."
+        />
+        <meta
+            name="keywords"
+            content="abogados puerto montt, defensa juridica sur, derecho corporativo, asesoria legal, bufete abogados chile, abogados sur chile, defensa legal puerto montt"
+        />
+        <meta name="author" content="Defensa Jurídica Sur" />
+        <meta name="robots" content="index, follow" />
+        <meta name="language" content="Spanish" />
+        <meta name="revisit-after" content="7 days" />
+
+        <!-- Geo Meta Tags -->
+        <meta name="geo.region" content="CL-LL" />
+        <meta name="geo.placename" content="Puerto Montt" />
+        <meta name="geo.position" content="-41.4693;-72.9424" />
+        <meta name="ICBM" content="-41.4693, -72.9424" />
+
+        <!-- Canonical URL -->
+        <link rel="canonical" href="https://defensajuridicasur.cl/" />
+
+        <!-- Hreflang -->
+        <link rel="alternate" hreflang="es-cl" href="https://defensajuridicasur.cl/" />
+        <link rel="alternate" hreflang="es" href="https://defensajuridicasur.cl/" />
+
+        <!-- Open Graph Meta Tags -->
+        <meta
+            property="og:title"
+            content="Defensa Jurídica Sur | Abogados Puerto Montt | Asesoría Legal Especializada"
+        />
+        <meta
+            property="og:description"
+            content="Bufete de abogados especializado en defensa legal y derecho corporativo en Puerto Montt. Más de 20 años de experiencia. Consulta gratuita."
+        />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://defensajuridicasur.cl/" />
+        <meta property="og:site_name" content="Defensa Jurídica Sur" />
+        <meta property="og:image" content="https://defensajuridicasur.cl/assets/og-image.jpg" />
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="630" />
+        <meta
+            property="og:image:alt"
+            content="Defensa Jurídica Sur - Abogados especialistas en Puerto Montt"
+        />
+        <meta property="og:locale" content="es_CL" />
+
+        <!-- Facebook App ID (optional) -->
+        <meta property="fb:app_id" content="your-facebook-app-id" />
+
+        <!-- Twitter Card Meta Tags -->
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta
+            name="twitter:title"
+            content="Defensa Jurídica Sur | Abogados Puerto Montt | Asesoría Legal Especializada"
+        />
+        <meta
+            name="twitter:description"
+            content="Bufete de abogados especializado en defensa legal y derecho corporativo en Puerto Montt. Más de 20 años de experiencia. Consulta gratuita."
+        />
+        <meta
+            name="twitter:image"
+            content="https://defensajuridicasur.cl/assets/twitter-card.jpg"
+        />
+        <meta
+            name="twitter:image:alt"
+            content="Defensa Jurídica Sur - Abogados especialistas en Puerto Montt"
+        />
+        <meta name="twitter:site" content="@defensajuridicasur" />
+        <meta name="twitter:creator" content="@defensajuridicasur" />
+
+        <!-- Theme Color for PWA -->
+        <meta name="theme-color" content="#c18f59" />
+        <meta name="msapplication-TileColor" content="#c18f59" />
+
+        <!-- Additional Performance -->
+        <meta name="format-detection" content="telephone=no" />
+        <meta http-equiv="x-ua-compatible" content="ie=edge" />
+    </head>
+    <body>
+        <!-- Schema.org Structured Data -->
+        <script type="application/ld+json" is:inline>
+            {
+                "@context": "https://schema.org",
+                "@type": "LegalService",
+                "name": "Defensa Jurídica Sur",
+                "alternateName": "Defensa Jurídica Sur Puerto Montt",
+                "description": "Bufete de abogados especializado en defensa legal y derecho corporativo en Puerto Montt con más de 20 años de experiencia.",
+                "url": "https://defensajuridicasur.cl",
+                "telephone": "+56-123-456-7890",
+                "email": "info@defensajuridicasur.cl",
+                "address": {
+                    "@type": "PostalAddress",
+                    "streetAddress": "Dirección del bufete",
+                    "addressLocality": "Puerto Montt",
+                    "addressRegion": "Los Lagos",
+                    "postalCode": "5480000",
+                    "addressCountry": "CL"
+                },
+                "geo": {
+                    "@type": "GeoCoordinates",
+                    "latitude": -41.4693,
+                    "longitude": -72.9424
+                },
+                "openingHoursSpecification": {
+                    "@type": "OpeningHoursSpecification",
+                    "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+                    "opens": "09:00",
+                    "closes": "18:00"
+                },
+                "priceRange": "$$",
+                "areaServed": {
+                    "@type": "Place",
+                    "name": "Puerto Montt, Los Lagos, Chile"
+                },
+                "serviceType": [
+                    "Defensa Legal",
+                    "Derecho Corporativo",
+                    "Asesoría Jurídica",
+                    "Derecho Civil",
+                    "Derecho Comercial"
+                ],
+                "aggregateRating": {
+                    "@type": "AggregateRating",
+                    "ratingValue": "4.8",
+                    "reviewCount": "50"
+                },
+                "sameAs": [
+                    "https://www.instagram.com/isabel.defjuridicasur/",
+                    "https://www.facebook.com/defensajuridicasur",
+                    "https://www.linkedin.com/company/defensa-juridica-sur"
+                ]
+            }
+        </script>
+
+        <Header />
+        <slot />
+    </body>
+</html>

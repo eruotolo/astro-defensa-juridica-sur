@@ -1,14 +1,38 @@
 {
-  "name": "astro-juridica",
-  "type": "module",
-  "version": "0.0.1",
-  "scripts": {
-    "dev": "astro dev",
-    "build": "astro build",
-    "preview": "astro preview",
-    "astro": "astro"
-  },
-  "dependencies": {
-    "astro": "^5.13.2"
-  }
+    "name": "astro-juridica",
+    "type": "module",
+    "version": "0.0.1",
+    "scripts": {
+        "dev": "astro dev",
+        "bun:dev": "bun astro dev",
+        "start": "astro dev",
+        "build": "astro check && astro build",
+        "bun:build": "rm -rf dist && bun astro check && bun astro build",
+        "preview": "astro preview",
+        "bun:preview": "bun astro preview",
+        "astro": "astro",
+        "lint": "biome check .",
+        "lint:fix": "biome check --write .",
+        "prettier": "prettier --write .",
+        "prettier:check": "prettier --check ."
+    },
+    "dependencies": {
+        "@astrojs/check": "^0.9.4",
+        "@astrojs/react": "^4.3.0",
+        "@fontsource-variable/montserrat": "^5.2.6",
+        "@lucide/astro": "^0.541.0",
+        "@tailwindcss/vite": "^4.1.12",
+        "@types/react": "^19.1.11",
+        "@types/react-dom": "^19.1.7",
+        "astro": "^5.13.2",
+        "react": "^19.1.1",
+        "react-dom": "^19.1.1",
+        "tailwindcss": "^4.1.12",
+        "typescript": "^5.9.2"
+    },
+    "devDependencies": {
+        "biome": "^0.3.3",
+        "prettier": "^3.6.2",
+        "prettier-plugin-astro": "^0.14.1"
+    }
 }

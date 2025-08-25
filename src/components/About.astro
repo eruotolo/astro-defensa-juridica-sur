@@ -1,0 +1,31 @@
+---
+import { Image } from "astro:assets";
+import justicia from "../assets/section-bg1.svg";
+import about from "../assets/about.png";
+---
+
+<div class="xl:pt-[50px]">
+    <Image src={justicia} alt="Imagen Justicia" class="absolute left-0" />
+    <div class="container mx-auto">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+            <div class="col-span-1 flex justify-center items-center">
+                <Image
+                    src={about}
+                    alt="About Image"
+                    class="xl:w-[640px] w-full max-w-md lg:max-w-none"
+                />
+            </div>
+            <div class="col-span-1 flex flex-col justify-center">
+                <h1 class="tituloH1">About Corelaw</h1>
+                <p class="parrafo py-[15px]">
+                    The prevailing view assumed lorem ipsum was born as a nonsense text. “It's not
+                    Latin, though it looks like it, and it actually says nothing,” Before & After
+                    magazine answered a curious reader, “Its ‘words’ loosely approximate the
+                    frequency with which letters occur in English, which is why at a glance it looks
+                    pretty real.”
+                </p>
+                <h3 class="tituloH3">Get About our Law Firm and Learn About our Expertise.</h3>
+            </div>
+        </div>
+    </div>
+</div>
