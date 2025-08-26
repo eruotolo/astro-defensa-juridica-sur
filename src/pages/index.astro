@@ -2,6 +2,7 @@
 import { SliderHome } from "../components/slider/SliderHome";
 import Layout from "../layouts/Layout.astro";
 import About from "../components/About.astro";
+import Service from "../components/Service.astro";
 ---
 
 <Layout>
@@ -10,7 +11,12 @@ import About from "../components/About.astro";
     </div>
 
     <!-- NOSTROS -->
-    <section class="xl:h-[760px]" id="nosotros">
+    <section id="nosotros" class="py-[50px]">
         <About />
+    </section>
+
+    <!-- SERVICIOS -->
+    <section class="bg-gris-bg py-[50px]" id="servicios">
+        <Service />
     </section>
 </Layout>

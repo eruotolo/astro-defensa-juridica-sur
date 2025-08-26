@@ -1,0 +1,77 @@
+---
+import { Image } from "astro:assets";
+
+import iconoUno from "../assets/icon-3.png";
+import iconoDos from "../assets/icon-2.png";
+import iconoTres from "../assets/icon-1.png";
+import iconoCuatro from "../assets/icon-4.png";
+import iconoCinco from "../assets/icon-5.png";
+import iconoSeis from "../assets/icon-6.png";
+
+interface ServiceInterface {
+    img: any;
+    title: string;
+    description: string;
+}
+const serviceItems: ServiceInterface[] = [
+    {
+        img: iconoUno,
+        title: "Business Law",
+        description:
+            "In consequat tincidunt turpis sit ametoi imperdiet. Praesent Class officelan gola nonatoureanor mauris.",
+    },
+    {
+        img: iconoDos,
+        title: "Workplace Accident",
+        description:
+            "Accountable talk locked and loaded. We need a recap by eod, cob or whatever comes first win-win-win.",
+    },
+    {
+        img: iconoTres,
+        title: "Juvenile Crime",
+        description:
+            "This proposal is a win-win situation which they cause a stellar paradigm shift, and produce a multi-fold.",
+    },
+    {
+        img: iconoCuatro,
+        title: "Criminal Law",
+        description:
+            "Accountable talk locked and loaded. We need a recap by eod, cob or whatever comes first win-win-win.",
+    },
+    {
+        img: iconoCinco,
+        title: "Real State Law",
+        description:
+            "This proposal is a win-win situation which they cause a stellar paradigm shift, and produce a multi-fold.",
+    },
+    {
+        img: iconoSeis,
+        title: "Drug Offense",
+        description:
+            "Officelan nonatoureanor mauris laoreet, iaculis libero quis.Curabitur et tempus eri consequat tincidunt.",
+    },
+];
+---
+
+<div class="container mx-auto">
+    <div class="flex flex-col justify-center items-center">
+        <h1 class="tituloH1">What We Offer</h1>
+        <p class="parrafo py-[15px]">
+            Praesent Class officelan nonatoureanor mauris laoreet, iaculis libero quis.Curabitur et
+            tempus eri consequat tincidunt.
+        </p>
+    </div>
+    <div class="grid grid-cols-3 gap-8 mt-[35px]">
+        {
+            serviceItems.map((item) => (
+                <div class="col-span-1 p-[20px] flex flex-row gap-4 hover:scale-102 transition-transform duration-500 transform my-[15px] hover:shadow-[0_12px_28px_rgba(193,143,89,0.45)] cursor-pointer">
+                    <Image src={item.img} alt="Icono Uno" class="h-[55px]" />
+                    <div>
+                        <h4 class="tituloH4">{item.title}</h4>
+                        <p class="parrafo mt-2">{item.description}</p>
+                    </div>
+                </div>
+            ))
+        }
+    </div>
+</div>

@@ -4,28 +4,73 @@ import justicia from "../assets/section-bg1.svg";
 import about from "../assets/about.png";
 ---
 
-<div class="xl:pt-[50px]">
+<div>
     <Image src={justicia} alt="Imagen Justicia" class="absolute left-0" />
     <div class="container mx-auto">
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
-            <div class="col-span-1 flex justify-center items-center">
+            <div class="col-span-1 flex justify-center items-center about-div1">
                 <Image
                     src={about}
                     alt="About Image"
-                    class="xl:w-[640px] w-full max-w-md lg:max-w-none"
+                    class="xl:w-[640px] w-full max-w-md lg:max-w-none about-image"
                 />
             </div>
-            <div class="col-span-1 flex flex-col justify-center">
+            <div class="col-span-1 flex flex-col justify-center about-div2">
                 <h1 class="tituloH1">About Corelaw</h1>
                 <p class="parrafo py-[15px]">
-                    The prevailing view assumed lorem ipsum was born as a nonsense text. “It's not
-                    Latin, though it looks like it, and it actually says nothing,” Before & After
-                    magazine answered a curious reader, “Its ‘words’ loosely approximate the
+                    The prevailing view assumed lorem ipsum was born as a nonsense text. "It's not
+                    Latin, though it looks like it, and it actually says nothing," Before & After
+                    magazine answered a curious reader, "Its 'words' loosely approximate the
                     frequency with which letters occur in English, which is why at a glance it looks
-                    pretty real.”
+                    pretty real."
                 </p>
                 <h3 class="tituloH3">Get About our Law Firm and Learn About our Expertise.</h3>
             </div>
         </div>
     </div>
 </div>
+
+<script>
+    import { inView, animate } from "motion";
+
+    // Animación slide-left para la imagen cuando entra en el viewport
+    inView(
+        ".about-div1",
+        (element) => {
+            animate(
+                element,
+                {
+                    opacity: [0, 1],
+                    x: [-100, 0],
+                },
+                {
+                    ease: [0.39, 0.24, 0.3, 1],
+                    duration: 0.5,
+                },
+            );
+        },
+        {
+            amount: 0.5, // Trigger when 50% of element is visible
+        },
+    );
+
+    inView(
+        ".about-div2",
+        (element) => {
+            animate(
+                element,
+                {
+                    opacity: [0, 1],
+                    x: [100, 0],
+                },
+                {
+                    ease: [0.39, 0.24, 0.3, 1],
+                    duration: 0.9,
+                },
+            );
+        },
+        {
+            amount: 0.5, // Trigger when 50% of element is visible
+        },
+    );
+</script>

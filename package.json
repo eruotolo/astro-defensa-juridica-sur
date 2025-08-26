@@ -22,17 +22,19 @@
         "@fontsource-variable/montserrat": "^5.2.6",
         "@lucide/astro": "^0.541.0",
         "@tailwindcss/vite": "^4.1.12",
-        "@types/react": "^19.1.11",
-        "@types/react-dom": "^19.1.7",
         "astro": "^5.13.2",
+        "motion": "^12.23.12",
         "react": "^19.1.1",
         "react-dom": "^19.1.1",
-        "tailwindcss": "^4.1.12",
-        "typescript": "^5.9.2"
+        "sharp": "^0.34.3",
+        "tailwindcss": "^4.1.12"
     },
     "devDependencies": {
+        "@types/react": "^19.1.11",
+        "@types/react-dom": "^19.1.7",
         "biome": "^0.3.3",
         "prettier": "^3.6.2",
-        "prettier-plugin-astro": "^0.14.1"
+        "prettier-plugin-astro": "^0.14.1",
+        "typescript": "^5.9.2"
     }
 }
