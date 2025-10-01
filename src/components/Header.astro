@@ -1,7 +1,7 @@
 ---
 import { Mail, Phone } from "@lucide/astro";
 import { Image } from "astro:assets";
-import logoHeader from "../assets/logo.png";
+import logoHeader from "../assets/images/logo-bk.svg";
 
 // Interfaces TypeScript
 interface NavigationItem {
@@ -23,10 +23,9 @@ interface Props {
 
 const {
     navigationItems = [
-        { href: "#inicio", label: "Inicio", active: true },
+        { href: "#inicio", label: "Inicio" },
         { href: "#nosotros", label: "Nosotros" },
         { href: "#servicios", label: "Servicios" },
-        { href: "#testimonios", label: "Testimonios" },
         { href: "#equipo", label: "Equipo" },
         { href: "#contacto", label: "Contacto" },
     ],
@@ -74,7 +73,8 @@ const {
                             <li class="nav-item">
                                 <a
                                     href={item.href}
-                                    class={`nav-link ${item.active ? "nav-link-active" : ""}`}
+                                    class="nav-link"
+                                    data-nav-link
                                 >
                                     {item.label}
                                 </a>
@@ -142,7 +142,8 @@ const {
                             <li class="sidebar-item">
                                 <a
                                     href={item.href}
-                                    class={`sidebar-link ${item.active ? "sidebar-link-active" : ""}`}
+                                    class="sidebar-link"
+                                    data-nav-link
                                 >
                                     {item.label}
                                 </a>
@@ -225,5 +226,81 @@ const {
         window.addEventListener("resize", () => {
             if (window.innerWidth >= 1024 && isOpen) toggleMenu();
         });
+    });
+</script>
+
+<script>
+    // Scroll Spy: Activa el enlace del menú según la sección visible
+    document.addEventListener("DOMContentLoaded", () => {
+        // Buscar tanto sections como divs con id
+        const sections = document.querySelectorAll("section[id], div[id]");
+        const navLinks = document.querySelectorAll("[data-nav-link]");
+
+        if (sections.length === 0 || navLinks.length === 0) return;
+
+        // Función para activar un enlace específico
+        const setActiveLink = (sectionId: string) => {
+            // Remover todas las clases active
+            navLinks.forEach((link) => {
+                link.classList.remove("nav-link-active", "sidebar-link-active");
+            });
+
+            // Agregar clase active al enlace correspondiente
+            navLinks.forEach((link) => {
+                const href = link.getAttribute("href");
+                if (href === `#${sectionId}`) {
+                    if (link.classList.contains("nav-link")) {
+                        link.classList.add("nav-link-active");
+                    } else if (link.classList.contains("sidebar-link")) {
+                        link.classList.add("sidebar-link-active");
+                    }
+                }
+            });
+        };
+
+        // Activar enlace al hacer clic
+        navLinks.forEach((link) => {
+            link.addEventListener("click", () => {
+                const href = link.getAttribute("href");
+                if (href && href.startsWith("#")) {
+                    const sectionId = href.substring(1);
+                    setActiveLink(sectionId);
+                }
+            });
+        });
+
+        // Scroll Spy con IntersectionObserver
+        const observerOptions = {
+            root: null,
+            rootMargin: "-10% 0px -70% 0px",
+            threshold: 0.1,
+        };
+
+        let currentActiveId = "";
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                    const sectionId = entry.target.id;
+
+                    // Evitar re-renderizados innecesarios
+                    if (currentActiveId === sectionId) return;
+                    currentActiveId = sectionId;
+
+                    setActiveLink(sectionId);
+                }
+            });
+        }, observerOptions);
+
+        // Observar todas las secciones
+        sections.forEach((section) => observer.observe(section));
+
+        // Activar el primer enlace al cargar la página
+        if (sections.length > 0) {
+            const firstSectionId = sections[0].id;
+            if (firstSectionId) {
+                setActiveLink(firstSectionId);
+            }
+        }
     });
 </script>

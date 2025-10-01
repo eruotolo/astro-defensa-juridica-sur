@@ -1,0 +1,82 @@
+---
+import { Image } from "astro:assets";
+import logoFooter from "../assets/images/logo-wh.svg";
+import { Mail, Phone } from "@lucide/astro";
+import Instagram from "@lucide/astro/icons/instagram";
+
+// Datos de contacto
+const contactInfo = {
+    email: "contacto@defensajuridicasur.cl",
+    phone: "+56912345678",
+    instagram: "https://instagram.com/defensajuridicasur",
+};
+
+// Obtener año actual
+const currentYear = new Date().getFullYear();
+---
+
+<footer class="bg-black pt-[50px]">
+    <div class="container mx-auto">
+        <div class="grid grid-cols-2 gap-8">
+            <div>
+                <a href="/">
+                    <Image src={logoFooter} alt="Logo" class="nav-logo" />
+                </a>
+                <p
+                    class="text-[#898989] text-[16px] font-sans leading-[24px] mt-[20px] md:mr-[20%] font-light"
+                >
+                    Somos un equipo que a lo largo de los años nos hemos especializado en diferentes
+                    materias con el objeto de entregar una asesoría jurídica correcta y que se
+                    oriente a cada caso.
+                </p>
+            </div>
+            <div></div>
+        </div>
+    </div>
+    <div class="container mx-auto border-t-[0.5px] border-white/25 mt-[50px] py-[15px]">
+        <div class="flex flex-col md:flex-row justify-between items-center gap-4">
+            <!-- Copyright -->
+            <div class="text-center md:text-left">
+                <p class="text-[#898989] text-[14px] font-sans font-light leading-[24px]">
+                    ©Copyright {currentYear} Defensa Jurídica Sur - Design by <span
+                        ><a
+                            href="https://crowadvance.com"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            class="text-marron hover:text-white transition-colors duration-200"
+                        >
+                            Crow Advance
+                        </a></span
+                    >
+                </p>
+            </div>
+
+            <!-- Iconos de redes sociales -->
+            <div class="flex gap-8 items-center">
+                <a
+                    href={`mailto:${contactInfo.email}`}
+                    class="text-[#898989] hover:text-marron transition-colors duration-200"
+                    aria-label="Enviar email"
+                >
+                    <Mail size={20} />
+                </a>
+                <a
+                    href={`tel:${contactInfo.phone}`}
+                    class="text-[#898989] hover:text-marron transition-colors duration-200"
+                    aria-label="Llamar por teléfono"
+                >
+                    <Phone size={20} />
+                </a>
+                <a
+                    href={contactInfo.instagram}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="text-[#898989] hover:text-marron transition-colors duration-200"
+                    aria-label="Seguir en Instagram"
+                >
+                    <Instagram size={20} />
+                </a>
+            </div>
+        </div>
+    </div>
+</footer>

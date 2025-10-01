@@ -1,77 +1,127 @@
 ---
 import { Image } from "astro:assets";
 
-import iconoUno from "../assets/icon-3.png";
-import iconoDos from "../assets/icon-2.png";
-import iconoTres from "../assets/icon-1.png";
-import iconoCuatro from "../assets/icon-4.png";
-import iconoCinco from "../assets/icon-5.png";
-import iconoSeis from "../assets/icon-6.png";
+import iconoDerechoPenal from "../assets/images/iconos/icono-derecho-penal.png";
+import iconoDerechoAdministrativo from "../assets/images/iconos/icono-derecho-administrativo.png";
+import iconoDerechoFamilia from "../assets/images/iconos/icono-derecho-familia.png";
+import iconoDerechoCivil from "../assets/images/iconos/icono-derecho-civil.png";
+import iconoPoliciaLocal from "../assets/images/iconos/icono-derecho-policial.png";
+import iconoDerechoMilitar from "../assets/images/iconos/icono-justicia-militar.png";
+import iconoDerechoLaboral from "../assets/images/iconos/icono-derecho-laboral.png";
 
 interface ServiceInterface {
     img: any;
     title: string;
-    description: string;
+    items: string[];
 }
 const serviceItems: ServiceInterface[] = [
     {
-        img: iconoUno,
-        title: "Business Law",
-        description:
-            "In consequat tincidunt turpis sit ametoi imperdiet. Praesent Class officelan gola nonatoureanor mauris.",
+        img: iconoDerechoPenal,
+        title: "Derecho Penal",
+        items: [
+            "Delitos contra la propiedad",
+            "Delitos contra las personas",
+            "Delito de Maltrato habitual",
+            "Delitos sexuales",
+            "Delitos vinculados a Ley de drogas",
+            "Responsabilidad Penal adolescente",
+            "Recursos y medidas cautelares",
+        ],
     },
     {
-        img: iconoDos,
-        title: "Workplace Accident",
-        description:
-            "Accountable talk locked and loaded. We need a recap by eod, cob or whatever comes first win-win-win.",
+        img: iconoDerechoAdministrativo,
+        title: "Derecho Administrativo",
+        items: [
+            "Sumarios Administrativos",
+            "Investigaciones Administrativas",
+            "Responsabilidad Administrativa funcionarios Públicos",
+            "Contraloría General de la República",
+            "Recursos de Legalidad",
+            "Recurso de Invalidación de Sumarios Administrativos",
+        ],
     },
     {
-        img: iconoTres,
-        title: "Juvenile Crime",
-        description:
-            "This proposal is a win-win situation which they cause a stellar paradigm shift, and produce a multi-fold.",
+        img: iconoDerechoFamilia,
+        title: "Derecho de Familia",
+        items: [
+            "Relación directa y regular (régimen de visitas)",
+            "Cuidado personal de hijo/a",
+            "Pensión de alimentos",
+            "Violencia Intrafamiliar",
+            "Medidas de protección",
+            "Declaración de bien familiar",
+            "Divorcios",
+            "Reclamación / Impugnación de Paternidad",
+        ],
     },
     {
-        img: iconoCuatro,
-        title: "Criminal Law",
-        description:
-            "Accountable talk locked and loaded. We need a recap by eod, cob or whatever comes first win-win-win.",
+        img: iconoDerechoCivil,
+        title: "Derecho Civil",
+        items: [
+            "Juicio Ejecutivo (cobranza)",
+            "Juicios de Arrendamientos",
+            "Juicio de Precario y Reivindicatorias",
+            "Juicios de Indemnización de perjuicios",
+            "Declaración de interdicción",
+            "Juicios de Partición de Herencia",
+            "Prescripción de Deudas",
+        ],
     },
     {
-        img: iconoCinco,
-        title: "Real State Law",
-        description:
-            "This proposal is a win-win situation which they cause a stellar paradigm shift, and produce a multi-fold.",
+        img: iconoDerechoMilitar,
+        title: "Justicia Militar",
+        items: [
+            "Desacato, desobediencia y abandono de deberes",
+            "Procesos disciplinarios",
+            "Recursos y procedimientos ante la Corte Marcial",
+            "Tramitación ante Juzgados Militares, de Aviación, Naval y Carabineros",
+        ],
     },
     {
-        img: iconoSeis,
-        title: "Drug Offense",
-        description:
-            "Officelan nonatoureanor mauris laoreet, iaculis libero quis.Curabitur et tempus eri consequat tincidunt.",
+        img: iconoDerechoLaboral,
+        title: "Derecho Laboral",
+        items: [
+            "Despidos Injustificados",
+            "Tutela, Vulneración de Derechos Fundamentales",
+            "Autodespido",
+            "Comparendos ante la Inspección del Trabajo",
+        ],
+    },
+    {
+        img: iconoPoliciaLocal,
+        title: "Policía Local",
+        items: ["Infracción a la Ley de Tránsito", "Infracciones a la Ley del Consumidor"],
     },
 ];
 ---
 
 <div class="container mx-auto">
     <div class="flex flex-col justify-center items-center">
-        <h1 class="tituloH1">What We Offer</h1>
-        <p class="parrafo py-[15px]">
-            Praesent Class officelan nonatoureanor mauris laoreet, iaculis libero quis.Curabitur et
-            tempus eri consequat tincidunt.
+        <h1 class="tituloH1">¿En qué podemos ayudarte?</h1>
+        <p class="parrafo py-[15px] text-center md:w-[60%]">
+            Contamos con especialistas en distintas áreas del derecho para proteger tus derechos e
+            intereses. Conoce nuestros servicios y encuentra la asesoría legal que necesitas.
         </p>
     </div>
     <div class="grid grid-cols-3 gap-8 mt-[35px]">
         {
             serviceItems.map((item) => (
                 <div class="col-span-1 p-[20px] flex flex-row gap-4 hover:scale-102 transition-transform duration-500 transform my-[15px] hover:shadow-[0_12px_28px_rgba(193,143,89,0.45)] cursor-pointer">
-                    <Image src={item.img} alt="Icono Uno" class="h-[55px]" />
+                    <Image src={item.img} alt={`Icono ${item.title}`} class="h-[55px]" />
                     <div>
                         <h4 class="tituloH4">{item.title}</h4>
-                        <p class="parrafo mt-2">{item.description}</p>
+                        <ul class="mt-2 space-y-1">
+                            {item.items.map((listItem) => (
+                                <li class="parrafo text-sm flex items-start">
+                                    <span class="text-marron mr-2">•</span>
+                                    <span>{listItem}</span>
+                                </li>
+                            ))}
+                        </ul>
                     </div>
                 </div>
             ))
         }
     </div>
+    <div></div>
 </div>

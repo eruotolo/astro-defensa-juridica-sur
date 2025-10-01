@@ -1,9 +1,9 @@
 @import "@fontsource-variable/montserrat";
 @import "tailwindcss";
-@import "../components/slider/styles/slider.css";
 
 @theme {
     --font-montserrat: "Montserrat Variable", sans-serif;
+    --font-sans: var(--font-montserrat);
 
     /* Configuración personalizada del container */
     --breakpoint-sm: 640px;
@@ -55,6 +55,13 @@
         background-clip: text;
         -webkit-text-fill-color: transparent;
     }
+    .tituloH1Alternative {
+        @apply font-montserrat text-4xl md:text-5xl font-bold text-transparent leading-tight;
+        background: linear-gradient(40deg, #ffffff 0%, #dea054 80%);
+        -webkit-background-clip: text;
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
 
     .tituloH3 {
         @apply font-montserrat text-xl md:text-2xl font-bold text-secondary leading-tight;
@@ -68,6 +75,11 @@
 
     .btn-slider {
         @apply font-montserrat text-blanco text-[1.071rem] font-normal tracking-[1px] leading-[21px] text-center uppercase bg-marron inline-block rounded-none transition-all hover:scale-105 duration-500 delay-800;
+    }
+
+    .bg-testimonios {
+        background-image: url("src/assets/testimonials.jpg");
+        @apply bg-cover bg-center bg-no-repeat;
     }
 
     /* =================================
@@ -126,7 +138,7 @@
     }
 
     .nav-logo {
-        @apply block max-h-10 w-auto;
+        @apply block w-[150px] h-[62px];
     }
 
     /* === MENÚ DESKTOP === */

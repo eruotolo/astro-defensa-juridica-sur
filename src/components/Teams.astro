@@ -1,0 +1,224 @@
+---
+import { Image } from "astro:assets";
+import type { ImageMetadata } from "astro";
+import { Mail, Phone, LinkedinIcon } from "@lucide/astro";
+
+interface TeamInterface {
+    name: string;
+    position: string;
+    img: ImageMetadata;
+    items?: string[];
+    email?: string;
+    phone?: string;
+    linkedin?: string;
+}
+
+interface TeamProcuradoresInterface {
+    name: string;
+    position: string;
+    img: ImageMetadata;
+    email?: string;
+    phone?: string;
+    linkedin?: string;
+}
+
+import imgJohn from "../assets/images/teams/john.png";
+import imgIsa from "../assets/images/teams/isabel.png";
+import imgFer from "../assets/images/teams/fernando.png";
+
+import imgIngrid from "../assets/images/teams/ingrid.png";
+import imgFlavio from "../assets/images/teams/flavio.png";
+
+const teamAbogados: TeamInterface[] = [
+    {
+        name: "John Ortega",
+        position: "Abogado",
+        img: imgJohn,
+        items: ["Derecho Penal", "Derecho Administrativo", "Justicia Militar"],
+        email: "john.ortega@defensajuridica.cl",
+        phone: "+56912345678",
+        linkedin: "https://linkedin.com/in/johnortega",
+    },
+    {
+        name: "Isabel Uribe",
+        position: "Abogado",
+        img: imgIsa,
+        items: ["Derecho Penal", "Derecho Civil", "Derecho de Familia"],
+        email: "isabel.uribe@defensajuridica.cl",
+        phone: "+56987654321",
+        linkedin: "https://linkedin.com/in/isabeluribe",
+    },
+    {
+        name: "Fernando Gutierrez",
+        position: "Abogado",
+        img: imgFer,
+        items: ["Derecho Laboral", "Derecho de Familia", "Deudas"],
+        email: "fernando.gutierrez@defensajuridica.cl",
+        phone: "+56911223344",
+        linkedin: "https://linkedin.com/in/fernandogutierrez",
+    },
+];
+
+const teamProcuradores: TeamProcuradoresInterface[] = [
+    {
+        name: "Ingrid Alvarado",
+        position: "Procurador",
+        img: imgIngrid,
+        email: "ejemplo@gmail.com",
+        phone: "+56911223344",
+        linkedin: "https://linkedin.com/in/fernandogutierrez",
+    },
+    {
+        name: "Flavio Vargas",
+        position: "Procurador",
+        img: imgFlavio,
+        email: "ejemplo@gmail.com",
+        phone: "+56911223344",
+        linkedin: "https://linkedin.com/in/fernandogutierrez",
+    },
+];
+---
+
+<div class="container mx-auto">
+    <div class="flex flex-col justify-center items-center">
+        <h1 class="tituloH1">Nuestro Equipo</h1>
+        <p class="parrafo py-[15px] text-center md:w-[60%]">
+            Contamos con abogados especializados en distintas áreas del derecho, comprometidos con
+            la defensa de tus derechos y la búsqueda de soluciones efectivas para cada caso.
+        </p>
+    </div>
+    <div class="flex flex-row gap-8 mt-[35px] items-center justify-center">
+        {
+            teamAbogados.map((item) => (
+                <div class="flex flex-col items-center justify-center group">
+                    <div class="relative cursor-pointer w-[309px] h-[323px] overflow-hidden rounded-t-lg shadow-lg">
+                        <Image
+                            src={item.img}
+                            alt={item.name}
+                            class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                        />
+                        {/* Overlay mejorado */}
+                        <div class="absolute inset-0 bg-marron/75 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col items-center justify-between py-8 px-6">
+                            {/* Nombre */}
+                            <h5 class="font-sans text-[24px] font-bold text-white text-center">
+                                {item.name}
+                            </h5>
+
+                            {/* Servicios - sin bullets */}
+                            <ul class="space-y-1 flex-1 flex flex-col justify-center">
+                                {item.items?.map((servicio) => (
+                                    <li class="text-white text-[16px] text-center font-sans">
+                                        {servicio}
+                                    </li>
+                                ))}
+                            </ul>
+
+                            {/* Iconos de contacto */}
+                            <div class="flex gap-4 items-center justify-center">
+                                <a
+                                    href={`mailto:${item.email}`}
+                                    class="w-10 h-10 bg-white rounded-full flex items-center justify-center hover:scale-110 transition-transform duration-200"
+                                    aria-label="Enviar email"
+                                >
+                                    <Mail class="text-marron" size={18} />
+                                </a>
+                                <a
+                                    href={`tel:${item.phone}`}
+                                    class="w-10 h-10 bg-white rounded-full flex items-center justify-center hover:scale-110 transition-transform duration-200"
+                                    aria-label="Llamar por teléfono"
+                                >
+                                    <Phone class="text-marron" size={18} />
+                                </a>
+                                <a
+                                    href={item.linkedin}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    class="w-10 h-10 bg-white rounded-full flex items-center justify-center hover:scale-110 transition-transform duration-200"
+                                    aria-label="Ver perfil de LinkedIn"
+                                >
+                                    <LinkedinIcon class="text-marron" size={18} />
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    {/* Info card integrada */}
+                    <div class="w-[309px] bg-gradient-to-b from-gris-bg to-white border border-gris-border rounded-b-lg px-6 py-6 shadow-md group-hover:shadow-xl transition-shadow duration-300">
+                        <h5 class="font-sans text-[22px] font-bold text-secondary text-center leading-tight">
+                            {item.name}
+                        </h5>
+                        <div class="flex items-center justify-center gap-2 mt-3">
+                            <div class="h-[1px] w-[30px] bg-marron" />
+                            <p class="text-marron uppercase font-sans text-[12px] tracking-[0.2em] font-bold">
+                                {item.position}
+                            </p>
+                            <div class="h-[1px] w-[30px] bg-marron" />
+                        </div>
+                    </div>
+                </div>
+            ))
+        }
+    </div>
+
+    <div class="flex flex-row gap-8 mt-[35px] items-center justify-center">
+        {
+            teamProcuradores.map((item) => (
+                <div class="flex flex-col items-center justify-center group">
+                    <div class="relative cursor-pointer w-[309px] h-[323px] overflow-hidden rounded-t-lg shadow-lg">
+                        <Image
+                            src={item.img}
+                            alt={item.name}
+                            class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                        />
+                        {/* Overlay mejorado */}
+                        <div class="absolute inset-0 bg-marron/75 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col items-center justify-center py-8 px-6 gap-y-8">
+                            {/* Nombre */}
+                            <h5 class="font-sans text-[24px] font-bold text-white text-center">
+                                {item.name}
+                            </h5>
+
+                            {/* Iconos de contacto */}
+                            <div class="flex gap-4 items-center justify-center">
+                                <a
+                                    href={`mailto:${item.email}`}
+                                    class="w-10 h-10 bg-white rounded-full flex items-center justify-center hover:scale-110 transition-transform duration-200"
+                                    aria-label="Enviar email"
+                                >
+                                    <Mail class="text-marron" size={18} />
+                                </a>
+                                <a
+                                    href={`tel:${item.phone}`}
+                                    class="w-10 h-10 bg-white rounded-full flex items-center justify-center hover:scale-110 transition-transform duration-200"
+                                    aria-label="Llamar por teléfono"
+                                >
+                                    <Phone class="text-marron" size={18} />
+                                </a>
+                                <a
+                                    href={item.linkedin}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    class="w-10 h-10 bg-white rounded-full flex items-center justify-center hover:scale-110 transition-transform duration-200"
+                                    aria-label="Ver perfil de LinkedIn"
+                                >
+                                    <LinkedinIcon class="text-marron" size={18} />
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    {/* Info card integrada */}
+                    <div class="w-[309px] bg-gradient-to-b from-gris-bg to-white border border-gris-border rounded-b-lg px-6 py-6 shadow-md group-hover:shadow-xl transition-shadow duration-300">
+                        <h5 class="font-sans text-[22px] font-bold text-secondary text-center leading-tight">
+                            {item.name}
+                        </h5>
+                        <div class="flex items-center justify-center gap-2 mt-3">
+                            <div class="h-[1px] w-[30px] bg-marron" />
+                            <p class="text-marron uppercase font-sans text-[12px] tracking-[0.2em] font-bold">
+                                {item.position}
+                            </p>
+                            <div class="h-[1px] w-[30px] bg-marron" />
+                        </div>
+                    </div>
+                </div>
+            ))
+        }
+    </div>
+</div>

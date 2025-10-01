@@ -1,5 +1,8 @@
 # build output
 dist/
+.vercel/
+.claude/
+CLAUDE.md
 
 # generated types
 .astro/
@@ -22,3 +25,5 @@ pnpm-debug.log*
 
 # jetbrains setting folder
 .idea/
+!/.vercel/
+/.vercel/

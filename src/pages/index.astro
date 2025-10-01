@@ -1,22 +1,40 @@
 ---
-import { SliderHome } from "../components/slider/SliderHome";
+import { SliderHome } from "../components/SliderHome";
 import Layout from "../layouts/Layout.astro";
 import About from "../components/About.astro";
 import Service from "../components/Service.astro";
+import Testimonials from "../components/Testimonials.astro";
+import Teams from "../components/Teams.astro";
+import ContactForm from "../components/ContactForm.astro";
 ---
 
 <Layout>
-    <div class="mt-[-120px]" id="inicio">
-        <SliderHome client:load />
+    <div class="mt-[-135px]" id="inicio">
+        <SliderHome client:idle />
     </div>
 
     <!-- NOSTROS -->
-    <section id="nosotros" class="py-[50px]">
+    <section id="nosotros" class="py-[90px]">
         <About />
     </section>
 
     <!-- SERVICIOS -->
-    <section class="bg-gris-bg py-[50px]" id="servicios">
+    <section id="servicios" class="bg-gris-bg py-[90px]">
         <Service />
+    </section>
+
+    <!-- TESTIMONIALS -->
+    <!--<section id="testimonios" class="bg-testimonios py-[50px]">
+        <Testimonials />
+    </section>-->
+
+    <!-- EQUIPO -->
+    <section id="equipo" class="bg-white py-[90px]">
+        <Teams />
+    </section>
+
+    <!-- CONTACTO -->
+    <section id="contacto" class="bg-gris-bg py-[90px]">
+        <ContactForm />
     </section>
 </Layout>

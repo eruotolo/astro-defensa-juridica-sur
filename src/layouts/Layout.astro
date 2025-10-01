@@ -1,6 +1,7 @@
 ---
 import "../styles/global.css";
 import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
 ---
 
 <!doctype html>
@@ -13,8 +14,10 @@ import Header from "../components/Header.astro";
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 
-        <!-- Favicon -->
-        <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+        <!-- Favicon - Múltiples formatos para compatibilidad -->
+        <link rel="icon" href="/favicon.ico" sizes="32x32" />
+        <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+        <link rel="apple-touch-icon" href="/favicon.png" />
         <meta name="generator" content={Astro.generator} />
 
         <!-- SEO Meta Tags -->
@@ -27,7 +30,7 @@ import Header from "../components/Header.astro";
             name="keywords"
             content="abogados puerto montt, defensa juridica sur, derecho corporativo, asesoria legal, bufete abogados chile, abogados sur chile, defensa legal puerto montt"
         />
-        <meta name="author" content="Defensa Jurídica Sur" />
+        <meta name="author" content="Crow Advance" />
         <meta name="robots" content="index, follow" />
         <meta name="language" content="Spanish" />
         <meta name="revisit-after" content="7 days" />
@@ -101,5 +104,6 @@ import Header from "../components/Header.astro";
     <body>
         <Header />
         <slot />
+        <Footer />
     </body>
 </html>
