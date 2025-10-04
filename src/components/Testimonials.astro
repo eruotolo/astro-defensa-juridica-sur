@@ -27,10 +27,12 @@ const testimonials: TestimonialsInterface[] = [
 
 <div class="container mx-auto">
     <div class="flex flex-col justify-center items-center">
-        <h1 class="tituloH1Alternative">Success Stories</h1>
+        <h1 class="tituloH1Alternative" data-aos="fade-down" data-aos-duration="800">
+            Success Stories
+        </h1>
     </div>
 
-    <div class="mt-[35px] relative max-w-4xl mx-auto">
+    <div class="mt-[35px] relative max-w-4xl mx-auto" data-aos="fade-up" data-aos-duration="1000">
         <div id="testimonials-container" class="overflow-hidden">
             {
                 testimonials.map((testimonial, index) => (

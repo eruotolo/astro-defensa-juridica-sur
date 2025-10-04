@@ -1,0 +1,93 @@
+---
+import { Image } from "astro:assets";
+
+import imgEsperticsUno from "../assets/images/esperctis-01.webp";
+import imgEsperticsDos from "../assets/images/esperctis-02.webp";
+import iconPenal from "../assets/images/iconos/icono-derecho-penal.png";
+import iconCivil from "../assets/images/iconos/icono-derecho-civil.png";
+---
+
+<div class="grid grid-cols-1 md:grid-cols-2 min-h-[630px]">
+    <!-- Columna de la imagen -->
+    <div class="col-span-1 h-full" data-aos="fade-right" data-aos-duration="1000">
+        <Image
+            src={imgEsperticsUno}
+            alt="Imagen Esperctis"
+            class="w-full h-full object-cover"
+            loading="lazy"
+        />
+    </div>
+
+    <!-- Columna del contenido -->
+    <div
+        class="col-span-1 flex items-center justify-center h-full"
+        data-aos="fade-left"
+        data-aos-duration="1000"
+    >
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col items-center justify-center">
+                <Image
+                    src={iconPenal}
+                    alt="Icono Derecho Penal"
+                    class="h-[55px] mb-[15px]"
+                    loading="lazy"
+                />
+                <h2
+                    class="font-sans text-[42px] leading-[52px] font-light text-center text-[#212529] md:w-[75%]"
+                >
+                    DEFENSORES PRIVADOS EN MATERIA PENAL
+                </h2>
+                <p class="textAlternative mt-[20px] md:w-[75%] text-center">
+                    En el sistema Penal, cada decisión puede marcar la diferencia entre tu libertad
+                    o enfrentar una condena que te prive de ésta. Enfrentar un proceso penal es una
+                    de las experiencias más difíciles que una persona puede atravesar, por tanto una
+                    defensa solida no es un lujo, es tu derecho. Una denuncia, una investigación o
+                    una audiencia no solo puede afectar tu libertar, sino también tu vida familiar,
+                    laboral y personal. Contamos con la preparación y experiencia necesaria para
+                    velar por tus derechos, ya sea como imputado o como víctima de un delito.
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="grid grid-cols-1 md:grid-cols-2 min-h-[630px]">
+    <!-- Columna del contenido -->
+    <div
+        class="col-span-1 flex items-center justify-center h-full"
+        data-aos="fade-right"
+        data-aos-duration="1000"
+    >
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col items-center justify-center">
+                <Image
+                    src={iconCivil}
+                    alt="Icono Derecho Penal"
+                    class="h-[55px] mb-[15px]"
+                    loading="lazy"
+                />
+                <h2
+                    class="font-sans text-[42px] leading-[52px] font-light text-center text-[#212529] md:w-[75%]"
+                >
+                    JUICIO EJECUTIVO. REMATES
+                </h2>
+                <p class="textAlternative mt-[20px] md:w-[75%] text-center">
+                    A través de este procedimiento el Estudio Jurídico a logrado que acreedores
+                    puedan cobrar judicialmente una deuda respaldada en un título, como un pagaré,
+                    cheques, facturas o sentencias. La importancia de este procedimiento es asegurar
+                    el cumplimiento efectivo de las deudas, embargando bienes para posteriormente
+                    ser rematados en subasta pública.
+                </p>
+            </div>
+        </div>
+    </div>
+    <!-- Columna de la imagen -->
+    <div class="col-span-1 h-full" data-aos="fade-left" data-aos-duration="1000">
+        <Image
+            src={imgEsperticsDos}
+            alt="Imagen Esperctis"
+            class="w-full h-full object-cover"
+            loading="lazy"
+        />
+    </div>
+</div>

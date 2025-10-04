@@ -4,7 +4,7 @@ import sgMail from "@sendgrid/mail";
 // Configurar SendGrid con la API key
 const SENDGRID_API_KEY = import.meta.env.SENDGRID_API_KEY;
 const FROM_EMAIL = import.meta.env.SENDGRID_FROM_EMAIL || "noreply@defensajuridicasur.cl";
-const TO_EMAIL = import.meta.env.SENDGRID_TO_EMAIL || "contacto@defensajuridicasur.cl";
+const TO_EMAIL = import.meta.env.SENDGRID_TO_EMAIL || "juridicasurdefensa@gmail.com";
 
 if (SENDGRID_API_KEY) {
     sgMail.setApiKey(SENDGRID_API_KEY);
@@ -19,7 +19,7 @@ export const POST: APIRoute = async ({ request }) => {
                     success: false,
                     message: "Error de configuración del servidor",
                 }),
-                { status: 500 }
+                { status: 500 },
             );
         }
 
@@ -37,7 +37,7 @@ export const POST: APIRoute = async ({ request }) => {
                     success: false,
                     message: "Todos los campos son requeridos",
                 }),
-                { status: 400 }
+                { status: 400 },
             );
         }
 
@@ -49,7 +49,7 @@ export const POST: APIRoute = async ({ request }) => {
                     success: false,
                     message: "El formato del email no es válido",
                 }),
-                { status: 400 }
+                { status: 400 },
             );
         }
 
@@ -119,7 +119,7 @@ ${message}
                 success: true,
                 message: "Mensaje enviado correctamente. Nos pondremos en contacto pronto.",
             }),
-            { status: 200 }
+            { status: 200 },
         );
     } catch (error) {
         console.error("Error al enviar email:", error);
@@ -129,7 +129,7 @@ ${message}
                 success: false,
                 message: "Error al enviar el mensaje. Por favor intente nuevamente.",
             }),
-            { status: 500 }
+            { status: 500 },
         );
     }
 };

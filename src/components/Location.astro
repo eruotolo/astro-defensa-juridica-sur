@@ -1,0 +1,72 @@
+---
+import { Image } from "astro:assets";
+import { Mail, Phone, MapPin } from "@lucide/astro";
+import LeafletMap from "./LeafletMap";
+
+import imgQR from "../assets/images/instagram_isabel_qr.svg";
+
+interface itemContactInterface {
+    icon: any;
+    text: string;
+}
+
+const contactItem: itemContactInterface[] = [
+    {
+        icon: Phone,
+        text: "+56958835620",
+    },
+    {
+        icon: Phone,
+        text: "+56921614436",
+    },
+    {
+        icon: Mail,
+        text: "juridicasurdefensa@gmail.com",
+    },
+    {
+        icon: MapPin,
+        text: "O´higgins 167, Edificio Plaza, Oficina 706",
+    },
+];
+---
+
+<div class="container mx-auto">
+    <div class="grid grid-cols-2">
+        <div class="cols-span-1 md:pr-[30px]">
+            <p class="textAlternative">¿Buscas un abogado? ¿O deseas una evaluación de caso?</p>
+            <h1 class="tituloH1" data-aos="fade-down" data-aos-duration="800">
+                Nuestro Estudio Jurídico
+            </h1>
+            <p class="textAlternative md:my-[20px]">
+                Nuestro estudio jurídico se encuentra ubicado en pleno centro de Puerto Montt, cerca
+                de la Ilustrísima Corte de Apelaciones. Horario de atención desde las 09:00 a 18:00
+                horas.
+            </p>
+            <div class="md:mt-[20px]">
+                <ul class="space-y-2">
+                    {
+                        contactItem.map((item) => (
+                            <li class="flex items-center gap-2 mt-[15px]">
+                                <item.icon class="w-5 h-5 text-marron mr-[5px]" />
+                                <span class="textAlternative">{item.text}</span>
+                            </li>
+                        ))
+                    }
+                </ul>
+                <div class="justify-center items-center flex">
+                    <Image src={imgQR} alt="QR Code" class="mt-[20px]" loading="lazy" />
+                </div>
+            </div>
+        </div>
+        <div class="cols-span-1 md:pl-[30px]">
+            <!-- Mapa de Leaflet -->
+            <LeafletMap
+                client:only="react"
+                latitude={-41.4693}
+                longitude={-72.9424}
+                zoom={16}
+                height="540px"
+            />
+        </div>
+    </div>
+</div>

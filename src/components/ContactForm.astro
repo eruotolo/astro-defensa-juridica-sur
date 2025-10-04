@@ -2,10 +2,14 @@
 // Componente de formulario de contacto
 ---
 
-<div class="container mx-auto">
-    <div class="flex flex-col justify-center items-center mb-[40px]">
-        <h1 class="tituloH1">Contáctanos</h1>
-        <p class="parrafo py-[15px] text-center md:w-[60%]">
+<div class="container mx-auto px-6 sm:px-8 md:px-10 xl:px-0 pb-12">
+    <div class="flex flex-col justify-center items-center mb-8 sm:mb-10 md:mb-[40px]">
+        <h1 class="tituloH1" data-aos="fade-down" data-aos-duration="800">Contáctanos</h1>
+        <p
+            class="textAlternative py-[15px] text-center px-4 sm:px-0 md:w-[70%]"
+            data-aos="fade-up"
+            data-aos-duration="900"
+        >
             Completa el formulario y nos pondremos en contacto contigo a la brevedad para atender tu
             consulta legal.
         </p>
@@ -13,49 +17,58 @@
 
     <!-- Grid de 12 columnas -->
     <div class="grid grid-cols-12">
-        <form id="contactForm" class="col-span-12 md:col-span-10 md:col-start-2">
+        <form
+            id="contactForm"
+            class="col-span-12 md:col-span-10 md:col-start-2"
+            data-aos="fade-up"
+            data-aos-duration="1000"
+        >
             <!-- Fila 1: Nombre, Email, Teléfono -->
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-6">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5 md:gap-6 mb-4 sm:mb-5 md:mb-6">
                 <div class="form-field">
+                    <label for="name" class="sr-only">Nombre completo</label>
                     <input
                         type="text"
                         name="name"
                         id="name"
                         placeholder="Nombre*"
-                        class="w-full px-4 py-3 border border-gris-border rounded-sm focus:outline-none focus:border-marron transition-colors duration-200 text-[#aaaaaa] text-[14px]"
+                        class="w-full px-4 py-4 md:py-3 min-h-[48px] md:min-h-[44px] border border-gris-border rounded-sm focus:outline-none focus:border-marron focus:ring-2 focus:ring-marron focus:ring-offset-2 transition-all duration-200 text-base sm:text-sm placeholder:text-[#767676]"
                         required
                     />
                 </div>
                 <div class="form-field">
+                    <label for="email" class="sr-only">Correo electrónico</label>
                     <input
                         type="email"
                         name="email"
                         id="email"
                         placeholder="Email*"
-                        class="w-full px-4 py-3 border border-gris-border rounded-sm focus:outline-none focus:border-marron transition-colors duration-200 text-[#aaaaaa] text-[14px]"
+                        class="w-full px-4 py-4 md:py-3 min-h-[48px] md:min-h-[44px] border border-gris-border rounded-sm focus:outline-none focus:border-marron focus:ring-2 focus:ring-marron focus:ring-offset-2 transition-all duration-200 text-base sm:text-sm placeholder:text-[#767676]"
                         required
                     />
                 </div>
-                <div class="form-field">
+                <div class="form-field md:col-span-2 lg:col-span-1">
+                    <label for="phone" class="sr-only">Número de teléfono</label>
                     <input
                         type="tel"
                         name="phone"
                         id="phone"
                         placeholder="Teléfono*"
-                        class="w-full px-4 py-3 border border-gris-border rounded-sm focus:outline-none focus:border-marron transition-colors duration-200 text-[#aaaaaa] text-[14px]"
+                        class="w-full px-4 py-4 md:py-3 min-h-[48px] md:min-h-[44px] border border-gris-border rounded-sm focus:outline-none focus:border-marron focus:ring-2 focus:ring-marron focus:ring-offset-2 transition-all duration-200 text-base sm:text-sm placeholder:text-[#767676]"
                         required
                     />
                 </div>
             </div>
 
             <!-- Fila 2: Mensaje -->
-            <div class="form-field mb-6">
+            <div class="form-field mb-4 sm:mb-5 md:mb-6">
+                <label for="message" class="sr-only">Mensaje de consulta</label>
                 <textarea
                     name="message"
                     id="message"
                     rows="7"
                     placeholder="Mensaje*"
-                    class="w-full px-4 py-3 border border-gris-border rounded-sm focus:outline-none focus:border-marron transition-colors duration-200 resize-none text-[#aaaaaa] text-[14px]"
+                    class="w-full px-4 py-4 md:py-3 border border-gris-border rounded-sm focus:outline-none focus:border-marron focus:ring-2 focus:ring-marron focus:ring-offset-2 transition-all duration-200 resize-none text-base sm:text-sm placeholder:text-[#767676]"
                     required></textarea>
             </div>
 
@@ -64,7 +77,7 @@
                 <button
                     type="submit"
                     id="submitBtn"
-                    class="bg-marron text-white px-8 py-3 rounded-[3px] font-sans font-normal tracking-wider hover:bg-secondary transition-colors duration-300 disabled:opacity-50 disabled:cursor-not-allowed text-[14px] uppercase cursor-pointer"
+                    class="w-full sm:w-auto bg-marron text-white px-8 py-4 md:py-3 min-h-[48px] md:min-h-[44px] rounded-[3px] font-sans font-normal tracking-wider hover:bg-secondary active:scale-95 transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed text-[14px] uppercase cursor-pointer"
                 >
                     <span id="buttonText">Enviar Mensaje</span>
                     <span id="buttonLoader" class="hidden">Enviando...</span>
@@ -74,6 +87,8 @@
             <!-- Mensaje de respuesta -->
             <div
                 id="formMessage"
+                role="alert"
+                aria-live="polite"
                 class="mt-6 p-4 rounded-sm text-center hidden transition-all duration-300"
             >
             </div>

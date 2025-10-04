@@ -1,5 +1,6 @@
 ---
 import "../styles/global.css";
+import "aos/dist/aos.css";
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
 ---
@@ -105,5 +106,20 @@ import Footer from "../components/Footer.astro";
         <Header />
         <slot />
         <Footer />
+
+        <!-- Inicialización de AOS -->
+        <script>
+            import AOS from "aos";
+
+            // Inicializar AOS cuando el DOM esté listo
+            AOS.init({
+                duration: 1000,
+                easing: "ease-in-out",
+                once: true,
+                offset: 100,
+                delay: 0,
+                disable: false,
+            });
+        </script>
     </body>
 </html>

@@ -1,9 +1,9 @@
 import React, { useState, useEffect, useCallback } from "react";
 import { AnimatePresence, motion } from "motion/react";
 
-// Assets de imágenes
-import slider01 from "../assets/images/portadaHome.webp";
-import slider02 from "../assets/images/portadaHomeSec.png";
+// Assets de imágenes optimizadas
+import slider01 from "../assets/images/portadaHome-optimized.webp";
+import slider02 from "../assets/images/portadaHomeSec.webp";
 
 // Tipos
 interface SlideData {
@@ -200,7 +200,7 @@ export const SliderHome: React.FC<SliderHomeProps> = ({
                         <div className="text-center max-w-4xl">
                             {/* Título animado */}
                             <motion.h1
-                                className="tituloH1Alternative mb-6"
+                                className="tituloH1Alternative mb-6 uppercase"
                                 custom={0}
                                 variants={contentVariants}
                                 initial="hidden"

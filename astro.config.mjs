@@ -30,6 +30,7 @@ export default defineConfig({
     compressHTML: true,
 
     vite: {
+        // @ts-ignore - Tailwind CSS plugin type compatibility
         plugins: [tailwindcss()],
 
         // Optimizaciones adicionales para el build

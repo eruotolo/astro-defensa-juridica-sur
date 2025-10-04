@@ -62,6 +62,9 @@
         background-clip: text;
         -webkit-text-fill-color: transparent;
     }
+    .textAlternative {
+        @apply text-[19px] font-sans leading-[28px] text-[#898989] font-light;
+    }
 
     .tituloH3 {
         @apply font-montserrat text-xl md:text-2xl font-bold text-secondary leading-tight;
