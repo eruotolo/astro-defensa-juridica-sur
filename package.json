@@ -7,7 +7,7 @@
         "bun:dev": "bun astro dev",
         "start": "astro dev",
         "build": "astro check && astro build",
-        "bun:build": "rm -rf dist && bun astro check && bun astro build",
+        "bun:build": "rm -rf dist .vercel && bun astro check && bun astro build",
         "preview": "astro preview",
         "bun:preview": "bun astro preview",
         "astro": "astro",
