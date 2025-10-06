@@ -70,9 +70,6 @@ import Footer from "../components/Footer.astro";
         />
         <meta property="og:locale" content="es_CL" />
 
-        <!-- Facebook App ID (optional) -->
-        <meta property="fb:app_id" content="your-facebook-app-id" />
-
         <!-- Twitter Card Meta Tags -->
         <meta name="twitter:card" content="summary_large_image" />
         <meta
@@ -101,6 +98,93 @@ import Footer from "../components/Footer.astro";
         <!-- Additional Performance -->
         <meta name="format-detection" content="telephone=no" />
         <meta http-equiv="x-ua-compatible" content="ie=edge" />
+
+        <!-- Structured Data - Schema.org -->
+        <script type="application/ld+json">
+            {
+                "@context": "https://schema.org",
+                "@type": "LegalService",
+                "@id": "https://defensajuridicasur.cl/#organization",
+                "name": "Defensa Jurídica Sur",
+                "alternateName": "Uribe y Fitzgerald y Cia.",
+                "url": "https://defensajuridicasur.cl",
+                "logo": "https://defensajuridicasur.cl/favicon.svg",
+                "description": "Bufete de abogados especializado en defensa legal y derecho corporativo en Puerto Montt. Más de 20 años de experiencia en derecho penal, civil, familiar, laboral y administrativo.",
+                "image": "https://defensajuridicasur.cl/assets/og-image.jpg",
+                "telephone": ["+56958835620", "+56921614436"],
+                "email": "juridicasurdefensa@gmail.com",
+                "priceRange": "$$",
+                "address": {
+                    "@type": "PostalAddress",
+                    "streetAddress": "O'higgins 167, Edificio Plaza, Oficina 706",
+                    "addressLocality": "Puerto Montt",
+                    "addressRegion": "Los Lagos",
+                    "postalCode": "5480000",
+                    "addressCountry": "CL"
+                },
+                "geo": {
+                    "@type": "GeoCoordinates",
+                    "latitude": -41.4693,
+                    "longitude": -72.9424
+                },
+                "openingHoursSpecification": {
+                    "@type": "OpeningHoursSpecification",
+                    "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+                    "opens": "09:00",
+                    "closes": "18:00"
+                },
+                "areaServed": {
+                    "@type": "City",
+                    "name": "Puerto Montt",
+                    "containedIn": {
+                        "@type": "AdministrativeArea",
+                        "name": "Los Lagos"
+                    }
+                },
+                "knowsAbout": [
+                    "Derecho Penal",
+                    "Derecho Civil",
+                    "Derecho de Familia",
+                    "Derecho Laboral",
+                    "Derecho Administrativo",
+                    "Justicia Militar",
+                    "Policía Local"
+                ],
+                "hasOfferCatalog": {
+                    "@type": "OfferCatalog",
+                    "name": "Servicios Legales",
+                    "itemListElement": [
+                        {
+                            "@type": "Offer",
+                            "itemOffered": {
+                                "@type": "Service",
+                                "name": "Derecho Penal",
+                                "description": "Defensa en delitos contra la propiedad, personas, maltrato habitual, delitos sexuales y ley de drogas"
+                            }
+                        },
+                        {
+                            "@type": "Offer",
+                            "itemOffered": {
+                                "@type": "Service",
+                                "name": "Derecho de Familia",
+                                "description": "Cuidado personal, pensión de alimentos, violencia intrafamiliar, divorcios y más"
+                            }
+                        },
+                        {
+                            "@type": "Offer",
+                            "itemOffered": {
+                                "@type": "Service",
+                                "name": "Derecho Civil",
+                                "description": "Juicios ejecutivos, arrendamientos, indemnización de perjuicios y partición de herencias"
+                            }
+                        }
+                    ]
+                },
+                "sameAs": [
+                    "https://instagram.com/defensajuridicasur"
+                ]
+            }
+        </script>
     </head>
     <body>
         <Header />

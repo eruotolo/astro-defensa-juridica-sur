@@ -1,0 +1,18 @@
+# robots.txt para Defensa Jurídica Sur
+# https://defensajuridicasur.cl
+
+# Permitir acceso a todos los bots
+User-agent: *
+Allow: /
+
+# Bloquear acceso a archivos de sistema y privados
+Disallow: /api/
+Disallow: /_astro/
+Disallow: /assets/
+
+# Permitir imágenes para Google Images
+User-agent: Googlebot-Image
+Allow: /
+
+# Sitemap
+Sitemap: https://defensajuridicasur.cl/sitemap-index.xml
