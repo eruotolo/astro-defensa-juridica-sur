@@ -7,25 +7,33 @@ import iconPenal from "../assets/images/iconos/icono-derecho-penal.png";
 import iconCivil from "../assets/images/iconos/icono-derecho-civil.png";
 ---
 
-<div class="grid grid-cols-1 md:grid-cols-2 min-h-[630px]">
+<div
+    class="grid grid-cols-1 md:grid-cols-2 min-h-[400px] sm:min-h-[500px] md:min-h-[560px] lg:min-h-[600px] xl:min-h-[630px]"
+>
     <!-- Columna de la imagen -->
-    <div class="col-span-1 h-full" data-aos="fade-right" data-aos-duration="1000">
+    <div
+        class="col-span-1 h-full order-2 md:order-1"
+        data-aos="fade-right"
+        data-aos-duration="1000"
+    >
         <Image
             src={imgEsperticsUno}
             alt="Imagen Esperctis"
-            class="w-full h-full object-cover"
+            class="w-full aspect-square md:h-full xl:h-[630px] object-cover"
             loading="lazy"
         />
     </div>
 
     <!-- Columna del contenido -->
     <div
-        class="col-span-1 flex items-center justify-center h-full"
+        class="col-span-1 flex items-center justify-center h-full order-1 md:order-2"
         data-aos="fade-left"
         data-aos-duration="1000"
     >
         <div class="container mx-auto px-6">
-            <div class="flex flex-col items-center justify-center">
+            <div
+                class="flex flex-col items-center justify-center py-10 sm:py-12 md:py-14 lg:py-16 xl:py-0"
+            >
                 <Image
                     src={iconPenal}
                     alt="Icono Derecho Penal"
@@ -51,7 +59,9 @@ import iconCivil from "../assets/images/iconos/icono-derecho-civil.png";
     </div>
 </div>
 
-<div class="grid grid-cols-1 md:grid-cols-2 min-h-[630px]">
+<div
+    class="grid grid-cols-1 md:grid-cols-2 min-h-[400px] sm:min-h-[500px] md:min-h-[560px] lg:min-h-[600px] xl:min-h-[630px]"
+>
     <!-- Columna del contenido -->
     <div
         class="col-span-1 flex items-center justify-center h-full"
@@ -59,10 +69,12 @@ import iconCivil from "../assets/images/iconos/icono-derecho-civil.png";
         data-aos-duration="1000"
     >
         <div class="container mx-auto px-6">
-            <div class="flex flex-col items-center justify-center">
+            <div
+                class="flex flex-col items-center justify-center py-10 sm:py-12 md:py-14 lg:py-16 xl:py-0"
+            >
                 <Image
                     src={iconCivil}
-                    alt="Icono Derecho Penal"
+                    alt="Icono Derecho Civil"
                     class="h-[55px] mb-[15px]"
                     loading="lazy"
                 />
@@ -86,7 +98,7 @@ import iconCivil from "../assets/images/iconos/icono-derecho-civil.png";
         <Image
             src={imgEsperticsDos}
             alt="Imagen Esperctis"
-            class="w-full h-full object-cover"
+            class="w-full aspect-square md:h-full xl:h-[630px] object-cover"
             loading="lazy"
         />
     </div>

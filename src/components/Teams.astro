@@ -81,11 +81,11 @@ const teamProcuradores: TeamProcuradoresInterface[] = [
 ];
 ---
 
-<div class="container mx-auto">
+<div class="container mx-auto px-6 sm:px-8 md:px-10 lg:px-12 xl:px-0">
     <div class="flex flex-col justify-center items-center">
         <h1 class="tituloH1" data-aos="fade-down" data-aos-duration="800">Nuestro Equipo</h1>
         <p
-            class="textAlternative py-[15px] text-center md:w-[70%]"
+            class="textAlternative py-3 sm:py-4 xl:py-[15px] text-center w-full sm:w-[85%] md:w-[75%] xl:w-[70%]"
             data-aos="fade-up"
             data-aos-duration="900"
         >
@@ -93,16 +93,16 @@ const teamProcuradores: TeamProcuradoresInterface[] = [
             la defensa de tus derechos y la búsqueda de soluciones efectivas para cada caso.
         </p>
     </div>
-    <div class="flex flex-row gap-8 mt-[35px] items-center justify-center">
+    <div class="flex flex-col sm:flex-col md:flex-row xl:flex-row gap-4 sm:gap-5 md:gap-6 xl:gap-8 mt-6 sm:mt-7 md:mt-8 xl:mt-[35px] items-center justify-center">
         {
             teamAbogados.map((item, index) => (
                 <div
-                    class="flex flex-col items-center justify-center group"
+                    class="flex flex-col items-center justify-center group w-full sm:w-[90%] md:w-auto"
                     data-aos="zoom-in"
                     data-aos-duration="800"
                     data-aos-delay={index * 150}
                 >
-                    <div class="relative cursor-pointer w-[350px] h-[366px] overflow-hidden rounded-t-lg shadow-lg">
+                    <div class="relative cursor-pointer w-full md:w-[280px] lg:w-[320px] xl:w-[350px] h-[380px] sm:h-[400px] md:h-[380px] lg:h-[400px] xl:h-[366px] overflow-hidden rounded-t-lg shadow-lg">
                         <Image
                             src={item.img}
                             alt={item.name}
@@ -112,21 +112,21 @@ const teamProcuradores: TeamProcuradoresInterface[] = [
                             loading="lazy"
                         />
                         {/* Overlay mejorado */}
-                        <div class="absolute inset-0 bg-marron/75 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col items-center justify-start py-6 px-6 overflow-y-auto">
+                        <div class="absolute inset-0 bg-marron/75 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col items-center justify-start py-4 sm:py-5 xl:py-6 px-4 sm:px-5 xl:px-6 overflow-y-auto">
                             {/* Nombre */}
-                            <h5 class="font-sans text-[22px] font-bold text-white text-center mb-4">
+                            <h5 class="font-sans text-[18px] sm:text-[20px] xl:text-[22px] font-bold text-white text-center mb-3 xl:mb-4">
                                 {item.name}
                             </h5>
 
                             {/* Áreas de Especialización */}
                             {item.items && item.items.length > 0 && (
-                                <div class="w-full mb-4">
-                                    <h6 class="font-sans text-[14px] font-bold text-white uppercase tracking-wider text-center mb-2 border-b border-white/30 pb-1">
+                                <div class="w-full mb-3 xl:mb-4">
+                                    <h6 class="font-sans text-[12px] sm:text-[13px] xl:text-[14px] font-bold text-white uppercase tracking-wider text-center mb-2 border-b border-white/30 pb-1">
                                         Especialidades
                                     </h6>
-                                    <ul class="space-y-1.5">
+                                    <ul class="space-y-1 xl:space-y-1.5">
                                         {item.items.map((servicio) => (
-                                            <li class="text-white text-[15px] text-center font-sans leading-tight">
+                                            <li class="text-white text-[13px] sm:text-[14px] xl:text-[15px] text-center font-sans leading-tight">
                                                 • {servicio}
                                             </li>
                                         ))}
@@ -137,12 +137,12 @@ const teamProcuradores: TeamProcuradoresInterface[] = [
                             {/* Estudios de Posgrado */}
                             {item.master && item.master.length > 0 && (
                                 <div class="w-full">
-                                    <h6 class="font-sans text-[14px] font-bold text-white uppercase tracking-wider text-center mb-2 border-b border-white/30 pb-1">
+                                    <h6 class="font-sans text-[12px] sm:text-[13px] xl:text-[14px] font-bold text-white uppercase tracking-wider text-center mb-2 border-b border-white/30 pb-1">
                                         Estudios de Posgrado
                                     </h6>
-                                    <ul class="space-y-1.5">
+                                    <ul class="space-y-1 xl:space-y-1.5">
                                         {item.master.map((master) => (
-                                            <li class="text-white text-[14px] text-center font-sans leading-tight">
+                                            <li class="text-white text-[12px] sm:text-[13px] xl:text-[14px] text-center font-sans leading-tight">
                                                 • {master}
                                             </li>
                                         ))}
@@ -152,16 +152,16 @@ const teamProcuradores: TeamProcuradoresInterface[] = [
                         </div>
                     </div>
                     {/* Info card integrada */}
-                    <div class="w-[350px] bg-gradient-to-b from-gris-bg to-white border border-gris-border rounded-b-lg px-6 py-6 shadow-md group-hover:shadow-xl transition-shadow duration-300">
-                        <h5 class="font-sans text-[22px] font-bold text-secondary text-center leading-tight">
+                    <div class="w-full md:w-[280px] lg:w-[320px] xl:w-[350px] bg-gradient-to-b from-gris-bg to-white border border-gris-border rounded-b-lg px-4 sm:px-5 xl:px-6 py-5 xl:py-6 shadow-md group-hover:shadow-xl transition-shadow duration-300">
+                        <h5 class="font-sans text-[19px] sm:text-[20px] xl:text-[22px] font-bold text-secondary text-center leading-tight">
                             {item.name}
                         </h5>
                         <div class="flex items-center justify-center gap-2 mt-3">
-                            <div class="h-[1px] w-[30px] bg-marron" />
-                            <p class="text-marron uppercase font-sans text-[12px] tracking-[0.2em] font-bold">
+                            <div class="h-[1px] w-[25px] sm:w-[28px] xl:w-[30px] bg-marron" />
+                            <p class="text-marron uppercase font-sans text-[11px] xl:text-[12px] tracking-[0.15em] xl:tracking-[0.2em] font-bold">
                                 {item.position}
                             </p>
-                            <div class="h-[1px] w-[30px] bg-marron" />
+                            <div class="h-[1px] w-[25px] sm:w-[28px] xl:w-[30px] bg-marron" />
                         </div>
                     </div>
                 </div>
@@ -169,16 +169,16 @@ const teamProcuradores: TeamProcuradoresInterface[] = [
         }
     </div>
 
-    <div class="flex flex-row gap-8 mt-[35px] items-center justify-center">
+    <div class="flex flex-col sm:flex-col md:flex-row xl:flex-row gap-4 sm:gap-5 md:gap-6 xl:gap-8 mt-6 sm:mt-7 md:mt-8 xl:mt-[35px] items-center justify-center">
         {
             teamProcuradores.map((item, index) => (
                 <div
-                    class="flex flex-col items-center justify-center group"
+                    class="flex flex-col items-center justify-center group w-full sm:w-[90%] md:w-auto"
                     data-aos="zoom-in"
                     data-aos-duration="800"
                     data-aos-delay={index * 150}
                 >
-                    <div class="relative cursor-pointer w-[350px] h-[366px] overflow-hidden rounded-t-lg shadow-lg">
+                    <div class="relative cursor-pointer w-full md:w-[280px] lg:w-[320px] xl:w-[350px] h-[380px] sm:h-[400px] md:h-[380px] lg:h-[400px] xl:h-[366px] overflow-hidden rounded-t-lg shadow-lg">
                         <Image
                             src={item.img}
                             alt={item.name}
@@ -188,24 +188,24 @@ const teamProcuradores: TeamProcuradoresInterface[] = [
                             loading="lazy"
                         />
                         {/* Overlay mejorado */}
-                        <div class="absolute inset-0 bg-marron/75 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col items-center justify-center py-8 px-6 gap-y-8">
+                        <div class="absolute inset-0 bg-marron/75 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col items-center justify-center py-6 sm:py-7 xl:py-8 px-4 sm:px-5 xl:px-6 gap-y-6 sm:gap-y-7 xl:gap-y-8">
                             {/* Nombre */}
-                            <h5 class="font-sans text-[24px] font-bold text-white text-center">
+                            <h5 class="font-sans text-[20px] sm:text-[22px] xl:text-[24px] font-bold text-white text-center">
                                 {item.name}
                             </h5>
 
                             {/* Iconos de contacto */}
-                            <div class="flex gap-4 items-center justify-center">
+                            <div class="flex gap-3 sm:gap-3.5 xl:gap-4 items-center justify-center">
                                 <a
                                     href={`mailto:${item.email}`}
-                                    class="w-10 h-10 bg-white rounded-full flex items-center justify-center hover:scale-110 transition-transform duration-200"
+                                    class="w-9 h-9 sm:w-9 sm:h-9 xl:w-10 xl:h-10 bg-white rounded-full flex items-center justify-center hover:scale-110 transition-transform duration-200"
                                     aria-label="Enviar email"
                                 >
                                     <Mail class="text-marron" size={18} />
                                 </a>
                                 <a
                                     href={`tel:${item.phone}`}
-                                    class="w-10 h-10 bg-white rounded-full flex items-center justify-center hover:scale-110 transition-transform duration-200"
+                                    class="w-9 h-9 sm:w-9 sm:h-9 xl:w-10 xl:h-10 bg-white rounded-full flex items-center justify-center hover:scale-110 transition-transform duration-200"
                                     aria-label="Llamar por teléfono"
                                 >
                                     <Phone class="text-marron" size={18} />
@@ -214,16 +214,16 @@ const teamProcuradores: TeamProcuradoresInterface[] = [
                         </div>
                     </div>
                     {/* Info card integrada */}
-                    <div class="w-[350px] bg-gradient-to-b from-gris-bg to-white border border-gris-border rounded-b-lg px-6 py-6 shadow-md group-hover:shadow-xl transition-shadow duration-300">
-                        <h5 class="font-sans text-[22px] font-bold text-secondary text-center leading-tight">
+                    <div class="w-full md:w-[280px] lg:w-[320px] xl:w-[350px] bg-gradient-to-b from-gris-bg to-white border border-gris-border rounded-b-lg px-4 sm:px-5 xl:px-6 py-5 xl:py-6 shadow-md group-hover:shadow-xl transition-shadow duration-300">
+                        <h5 class="font-sans text-[19px] sm:text-[20px] xl:text-[22px] font-bold text-secondary text-center leading-tight">
                             {item.name}
                         </h5>
                         <div class="flex items-center justify-center gap-2 mt-3">
-                            <div class="h-[1px] w-[30px] bg-marron" />
-                            <p class="text-marron uppercase font-sans text-[12px] tracking-[0.2em] font-bold">
+                            <div class="h-[1px] w-[25px] sm:w-[28px] xl:w-[30px] bg-marron" />
+                            <p class="text-marron uppercase font-sans text-[11px] xl:text-[12px] tracking-[0.15em] xl:tracking-[0.2em] font-bold">
                                 {item.position}
                             </p>
-                            <div class="h-[1px] w-[30px] bg-marron" />
+                            <div class="h-[1px] w-[25px] sm:w-[28px] xl:w-[30px] bg-marron" />
                         </div>
                     </div>
                 </div>

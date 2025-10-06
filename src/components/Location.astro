@@ -30,9 +30,9 @@ const contactItem: itemContactInterface[] = [
 ];
 ---
 
-<div class="container mx-auto">
-    <div class="grid grid-cols-2">
-        <div class="cols-span-1 md:pr-[30px]">
+<div class="container mx-auto px-6 sm:px-8 md:px-10 lg:px-12">
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8 md:gap-10">
+        <div class="col-span-1 md:pr-[30px]">
             <p class="textAlternative">¿Buscas un abogado? ¿O deseas una evaluación de caso?</p>
             <h1 class="tituloH1" data-aos="fade-down" data-aos-duration="800">
                 Nuestro Estudio Jurídico
@@ -58,15 +58,17 @@ const contactItem: itemContactInterface[] = [
                 </div>
             </div>
         </div>
-        <div class="cols-span-1 md:pl-[30px]">
+        <div class="col-span-1 md:pl-[30px]">
             <!-- Mapa de Leaflet -->
-            <LeafletMap
-                client:only="react"
-                latitude={-41.4693}
-                longitude={-72.9424}
-                zoom={16}
-                height="540px"
-            />
+            <div class="h-[300px] sm:h-[350px] md:h-[400px] lg:h-[500px] xl:h-[540px] w-full">
+                <LeafletMap
+                    client:only="react"
+                    latitude={-41.4693}
+                    longitude={-72.9424}
+                    zoom={16}
+                    height="100%"
+                />
+            </div>
         </div>
     </div>
 </div>
