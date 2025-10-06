@@ -37,9 +37,13 @@ export default defineConfig({
         // Optimizaciones adicionales para el build
         build: {
             cssCodeSplit: false, // Un solo archivo CSS
+            cssMinify: true,
+            minify: 'esbuild',
             rollupOptions: {
                 output: {
-                    assetFileNames: "assets/[name].[hash][extname]",
+                    assetFileNames: "assets/[name]-[hash][extname]",
+                    chunkFileNames: "assets/[name]-[hash].js",
+                    entryFileNames: "assets/[name]-[hash].js"
                 },
             },
         },
