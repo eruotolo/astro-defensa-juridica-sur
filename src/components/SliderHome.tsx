@@ -31,7 +31,7 @@ const defaultSlides: SlideData[] = [
         description: "Defensa Jurídica Sur Puerto Montt",
         image: slider01,
         cta: {
-            text: "Consulta Gratuita",
+            text: "Contactanos",
             href: "#contacto",
         },
     },
