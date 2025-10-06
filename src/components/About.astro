@@ -5,9 +5,9 @@ import about from "../assets/images/about-new.webp";
 ---
 
 <div>
-    <Image src={justicia} alt="Imagen Justicia" class="absolute left-0" loading="lazy" />
-    <div class="container mx-auto">
-        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+    <Image src={justicia} alt="Imagen Justicia" class="absolute left-0 hidden md:block" loading="lazy" />
+    <div class="container mx-auto px-4 sm:px-6 md:px-8 xl:px-0">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-7 md:gap-8">
             <div
                 class="col-span-1 flex justify-center items-center"
                 data-aos="fade-right"
@@ -16,7 +16,7 @@ import about from "../assets/images/about-new.webp";
                 <Image
                     src={about}
                     alt="About Image"
-                    class="xl:w-[640px] w-full max-w-md lg:max-w-none"
+                    class="xl:w-[640px] w-full max-w-full sm:max-w-md lg:max-w-none"
                     widths={[400, 640, 800, 1000]}
                     sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 640px"
                     loading="lazy"
@@ -28,7 +28,7 @@ import about from "../assets/images/about-new.webp";
                 data-aos-duration="900"
             >
                 <h1 class="tituloH1">Nuestro Estudio Jurídico</h1>
-                <p class="textAlternative py-[15px]">
+                <p class="textAlternative py-3 sm:py-4 md:py-[15px]">
                     Somos un equipo que a lo largo de los años nos hemos especializado en diferentes
                     materias con el objeto de entregar una asesoría jurídica correcta y que se
                     oriente a cada caso. El esfuerzo y dedicación son herramientas fundamentales en
