@@ -1,29 +1,79 @@
-# build output
+# ====================
+# BUILD OUTPUT
+# ====================
 dist/
 .vercel/
-.claude/
-CLAUDE.md
 
-# generated types
+# ====================
+# ASTRO GENERATED
+# ====================
 .astro/
 
-# dependencies
+# ====================
+# DEPENDENCIAS
+# ====================
 node_modules/
 
-# logs
+# ====================
+# LOGS
+# ====================
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 pnpm-debug.log*
+bun-debug.log*
 
-# environment variables
+# ====================
+# VARIABLES DE ENTORNO
+# ====================
 .env
+.env.local
 .env.production
+.env.development
+.env*.local
 
-# macOS-specific files
+# ====================
+# SISTEMA OPERATIVO
+# ====================
+# macOS
 .DS_Store
+.AppleDouble
+.LSOverride
 
-# jetbrains setting folder
+# Windows
+Thumbs.db
+Thumbs.db:encryptable
+ehthumbs.db
+Desktop.ini
+
+# Linux
+*~
+.directory
+
+# ====================
+# IDEs Y EDITORES
+# ====================
+# JetBrains
 .idea/
-!/.vercel/
-/.vercel/
+*.iml
+
+# VSCode
+.vscode/
+*.code-workspace
+
+# Sublime Text
+*.sublime-project
+*.sublime-workspace
+
+# ====================
+# HERRAMIENTAS DE DESARROLLO
+# ====================
+.claude/
+
+# ====================
+# ARCHIVOS TEMPORALES
+# ====================
+*.tmp
+*.temp
+*.log
+*.cache
