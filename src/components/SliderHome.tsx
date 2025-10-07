@@ -27,7 +27,7 @@ interface SliderHomeProps {
 const defaultSlides: SlideData[] = [
     {
         id: 1,
-        title: "URIBE Y FITZGERALD y Cia.",
+        title: "URIBE FITZGERALD y Cia.",
         image: slider01,
         cta: {
             text: "Contáctanos",
