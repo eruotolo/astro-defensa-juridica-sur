@@ -40,17 +40,17 @@ const teamAbogados: TeamInterface[] = [
     },
     {
         name: "Isabel Uribe",
-        position: "Abogado",
+        position: "Abogada",
         img: imgIsa,
         items: ["Derecho Penal", "Derecho Civil", "Derecho de Familia"],
         master: [
             "Diplomado en Derecho Laboral.",
             "Diplomado en Derecho Penal y Procesal.",
-            "Curso accidentes laborales leales y enfermedades profesionales.",
+            "Curso accidentes laborales y enfermedades profesionales.",
         ],
     },
     {
-        name: "Fernando Gutierrez",
+        name: "Fernando Gutiérrez",
         position: "Abogado",
         img: imgFer,
         items: ["Derecho Laboral", "Derecho de Familia", "Deudas"],
@@ -58,25 +58,23 @@ const teamAbogados: TeamInterface[] = [
             "Diplomado en derecho laboral y empresa.",
             "Diplomado en compliance público y municipal.",
             "Postítulo en recursos procesales.",
-            "Diploma en derecho ambiental.",
+            "Diplomado en derecho ambiental.",
         ],
     },
 ];
 
-const teamProcuradores: TeamProcuradoresInterface[] = [
+const teamProcuradores: TeamInterface[] = [
     {
         name: "Ingrid Alvarado",
-        position: "Procurador",
+        position: "Procuradora",
         img: imgIngrid,
-        email: "Juridicasurdefensa@gmail.com",
-        phone: "+56958835620",
+        items: ["Tramitación posesiones efectivas", "Saneamiento de la pequeña propiedad raíz"],
     },
     {
         name: "Flavio Vargas",
         position: "Procurador",
         img: imgFlavio,
-        email: "Juridicasurdefensa@gmail.com",
-        phone: "+56921614436",
+        items: ["Tramitación ante Juzgado de Policía Local"],
     },
 ];
 ---
@@ -182,35 +180,33 @@ const teamProcuradores: TeamProcuradoresInterface[] = [
                         <Image
                             src={item.img}
                             alt={item.name}
-                            class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                            class="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500"
                             widths={[309, 400]}
                             sizes="309px"
                             loading="lazy"
                         />
                         {/* Overlay mejorado */}
-                        <div class="absolute inset-0 bg-marron/75 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col items-center justify-center py-6 sm:py-7 xl:py-8 px-4 sm:px-5 xl:px-6 gap-y-6 sm:gap-y-7 xl:gap-y-8">
+                        <div class="absolute inset-0 bg-marron/75 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col items-center justify-start py-4 sm:py-5 xl:py-6 px-4 sm:px-5 xl:px-6 overflow-y-auto">
                             {/* Nombre */}
-                            <h5 class="font-sans text-[20px] sm:text-[22px] xl:text-[24px] font-bold text-white text-center">
+                            <h5 class="font-sans text-[18px] sm:text-[20px] xl:text-[22px] font-bold text-white text-center mb-3 xl:mb-4">
                                 {item.name}
                             </h5>
 
-                            {/* Iconos de contacto */}
-                            <div class="flex gap-3 sm:gap-3.5 xl:gap-4 items-center justify-center">
-                                <a
-                                    href={`mailto:${item.email}`}
-                                    class="w-9 h-9 sm:w-9 sm:h-9 xl:w-10 xl:h-10 bg-white rounded-full flex items-center justify-center hover:scale-110 transition-transform duration-200"
-                                    aria-label="Enviar email"
-                                >
-                                    <Mail class="text-marron" size={18} />
-                                </a>
-                                <a
-                                    href={`tel:${item.phone}`}
-                                    class="w-9 h-9 sm:w-9 sm:h-9 xl:w-10 xl:h-10 bg-white rounded-full flex items-center justify-center hover:scale-110 transition-transform duration-200"
-                                    aria-label="Llamar por teléfono"
-                                >
-                                    <Phone class="text-marron" size={18} />
-                                </a>
-                            </div>
+                            {/* Áreas de Especialización */}
+                            {item.items && item.items.length > 0 && (
+                                <div class="w-full mb-3 xl:mb-4">
+                                    <h6 class="font-sans text-[12px] sm:text-[13px] xl:text-[14px] font-bold text-white uppercase tracking-wider text-center mb-2 border-b border-white/30 pb-1">
+                                        Especialidades
+                                    </h6>
+                                    <ul class="space-y-1 xl:space-y-1.5">
+                                        {item.items.map((servicio) => (
+                                            <li class="text-white text-[13px] sm:text-[14px] xl:text-[15px] text-center font-sans leading-tight">
+                                                • {servicio}
+                                            </li>
+                                        ))}
+                                    </ul>
+                                </div>
+                            )}
                         </div>
                     </div>
                     {/* Info card integrada */}

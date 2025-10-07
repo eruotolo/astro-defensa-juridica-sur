@@ -10,7 +10,7 @@
             data-aos="fade-up"
             data-aos-duration="900"
         >
-            Completa el formulario y nos pondremos en contacto contigo a la brevedad para atender tu
+            Completa el formulario y nos pondremos en contacto a la brevedad para atender tu
             consulta legal.
         </p>
     </div>
@@ -24,7 +24,9 @@
             data-aos-duration="1000"
         >
             <!-- Fila 1: Nombre, Email, Teléfono -->
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5 md:gap-6 mb-4 sm:mb-5 md:mb-6">
+            <div
+                class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5 md:gap-6 mb-4 sm:mb-5 md:mb-6"
+            >
                 <div class="form-field">
                     <label for="name" class="sr-only">Nombre completo</label>
                     <input
@@ -58,6 +60,25 @@
                         required
                     />
                 </div>
+            </div>
+
+            <!-- Fila 1.5: Asunto -->
+            <div class="form-field mb-4 sm:mb-5 md:mb-6">
+                <label for="subject" class="sr-only">Asunto de consulta</label>
+                <select
+                    name="subject"
+                    id="subject"
+                    class="w-full px-4 py-4 md:py-3 min-h-[48px] md:min-h-[44px] border border-gris-border rounded-sm focus:outline-none focus:border-marron focus:ring-2 focus:ring-marron focus:ring-offset-2 transition-all duration-200 text-base sm:text-sm text-[#767676]"
+                    required
+                >
+                    <option value="" disabled selected>Asunto de consulta*</option>
+                    <option value="Busco un abogado">¿Buscas un abogado?</option>
+                    <option value="Evaluación de caso">¿Deseas una evaluación de caso?</option>
+                    <option value="Agendar reunión"
+                        >¿Deseas agendar una reunión y aclarar tus dudas jurídicas?</option
+                    >
+                    <option value="Otro">Otro</option>
+                </select>
             </div>
 
             <!-- Fila 2: Mensaje -->
