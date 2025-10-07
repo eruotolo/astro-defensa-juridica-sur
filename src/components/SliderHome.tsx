@@ -9,7 +9,7 @@ import slider02 from "../assets/images/portadaHomeSec.webp";
 interface SlideData {
     id: number;
     title: string;
-    description: string;
+    description?: string;
     image: string | { src: string };
     cta: {
         text: string;
@@ -28,10 +28,9 @@ const defaultSlides: SlideData[] = [
     {
         id: 1,
         title: "URIBE Y FITZGERALD y Cia.",
-        description: "Defensa Jurídica Sur Puerto Montt",
         image: slider01,
         cta: {
-            text: "Contactanos",
+            text: "Contáctanos",
             href: "#contacto",
         },
     },
