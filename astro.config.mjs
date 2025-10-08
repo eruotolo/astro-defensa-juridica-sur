@@ -4,6 +4,7 @@ import tailwindcss from "@tailwindcss/vite";
 import react from "@astrojs/react";
 import vercel from "@astrojs/vercel";
 import sitemap from "@astrojs/sitemap";
+import partytown from "@astrojs/partytown";
 
 // https://astro.build/config
 export default defineConfig({
@@ -48,7 +49,15 @@ export default defineConfig({
         },
     },
 
-    integrations: [react(), sitemap()],
+    integrations: [
+        react(),
+        sitemap(),
+        partytown({
+            config: {
+                forward: ["dataLayer.push"],
+            },
+        }),
+    ],
 
     // Prefetch para recursos
     prefetch: {

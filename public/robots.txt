@@ -8,7 +8,15 @@ Allow: /
 # Bloquear acceso a archivos de sistema y privados
 Disallow: /api/
 Disallow: /_astro/
-Disallow: /assets/
+
+# Permitir acceso a assets (imágenes, CSS, JS)
+Allow: /assets/*.webp
+Allow: /assets/*.jpg
+Allow: /assets/*.jpeg
+Allow: /assets/*.png
+Allow: /assets/*.svg
+Allow: /assets/*.css
+Allow: /assets/*.js
 
 # Permitir imágenes para Google Images
 User-agent: Googlebot-Image

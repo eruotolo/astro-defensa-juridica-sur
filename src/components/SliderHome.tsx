@@ -198,7 +198,7 @@ export const SliderHome: React.FC<SliderHomeProps> = ({
                     <div className="container mx-auto flex flex-col items-center justify-center h-full relative z-20 px-6">
                         <div className="text-center max-w-4xl">
                             {/* Título animado */}
-                            <motion.h1
+                            <motion.p
                                 className="tituloH1Alternative mb-6 uppercase"
                                 custom={0}
                                 variants={contentVariants}
@@ -206,7 +206,7 @@ export const SliderHome: React.FC<SliderHomeProps> = ({
                                 animate="visible"
                             >
                                 {currentSlide.title}
-                            </motion.h1>
+                            </motion.p>
 
                             {/* Descripción animada */}
                             <motion.p
