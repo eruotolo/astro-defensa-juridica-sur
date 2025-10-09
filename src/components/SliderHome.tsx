@@ -4,13 +4,17 @@ import { AnimatePresence, motion } from "motion/react";
 // Assets de imágenes optimizadas
 import slider01 from "../assets/images/portadaHome-optimized.webp";
 import slider02 from "../assets/images/portadaHomeSec.webp";
+import slider02mobile from "../assets/images/slider-02-mobile.webp";
 
 // Tipos
 interface SlideData {
     id: number;
     title: string;
     description?: string;
-    image: string | { src: string };
+    image:
+        | string
+        | { src: string }
+        | { desktop: string | { src: string }; mobile: string | { src: string } };
     cta: {
         text: string;
         href: string;
@@ -39,7 +43,10 @@ const defaultSlides: SlideData[] = [
         title: "Compromiso y Experiencia a tu Servicio",
         description:
             "Profesionales unidos para defender tus derechos y acompañarte en cada etapa del proceso legal.",
-        image: slider02,
+        image: {
+            desktop: slider02,
+            mobile: slider02mobile,
+        },
         cta: {
             text: "Ver Servicios",
             href: "#servicios",
@@ -160,8 +167,34 @@ export const SliderHome: React.FC<SliderHomeProps> = ({
     };
 
     const currentSlide = slides[currentIndex];
-    const imageUrl =
-        typeof currentSlide.image === "string" ? currentSlide.image : currentSlide.image.src;
+
+    // Type guard para imagen responsive
+    const isResponsiveImage = (
+        img: SlideData["image"],
+    ): img is { desktop: string | { src: string }; mobile: string | { src: string } } => {
+        return (
+            typeof img === "object" &&
+            img !== null &&
+            "desktop" in img &&
+            "mobile" in img
+        );
+    };
+
+    // Helper para extraer URL de imagen
+    const getImageUrl = (img: string | { src: string }) => {
+        return typeof img === "string" ? img : img.src;
+    };
+
+    // Determinar URLs según tipo de imagen
+    const imageUrl = isResponsiveImage(currentSlide.image)
+        ? getImageUrl(currentSlide.image.desktop)
+        : typeof currentSlide.image === "string"
+          ? currentSlide.image
+          : currentSlide.image.src;
+
+    const mobileImageUrl = isResponsiveImage(currentSlide.image)
+        ? getImageUrl(currentSlide.image.mobile)
+        : imageUrl;
 
     return (
         <section
@@ -185,11 +218,29 @@ export const SliderHome: React.FC<SliderHomeProps> = ({
                     animate="center"
                     exit="exit"
                 >
-                    {/* Imagen de fondo */}
-                    <div
-                        className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-                        style={{ backgroundImage: `url(${imageUrl})` }}
-                    />
+                    {/* Imagen de fondo responsive */}
+                    {isResponsiveImage(currentSlide.image) ? (
+                        <picture className="absolute inset-0">
+                            {/* Imagen para móviles (< 768px) */}
+                            <source
+                                media="(max-width: 767px)"
+                                srcSet={mobileImageUrl}
+                            />
+                            {/* Imagen para desktop (>= 768px) */}
+                            <source media="(min-width: 768px)" srcSet={imageUrl} />
+                            {/* Fallback para navegadores sin soporte de picture */}
+                            <img
+                                src={imageUrl}
+                                alt={currentSlide.title}
+                                className="w-full h-full object-cover object-center"
+                            />
+                        </picture>
+                    ) : (
+                        <div
+                            className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+                            style={{ backgroundImage: `url(${imageUrl})` }}
+                        />
+                    )}
 
                     {/* Overlay oscuro */}
                     <div className="absolute inset-0 bg-black/50 z-10" />
