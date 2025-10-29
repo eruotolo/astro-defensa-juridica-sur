@@ -288,20 +288,17 @@ const teamProcuradores: TeamInterface[] = [
         teamCards.forEach(card => {
             const closeButton = card.querySelector('.team-card-close-btn');
 
-            card.addEventListener('click', (event) => {
-                // Only trigger the mobile interaction below the desktop breakpoint
+            // Add the visible class on card click (for mobile)
+            card.addEventListener('click', () => {
                 if (window.innerWidth < DESKTOP_BREAKPOINT) {
-                    // Ensure the click is not on the close button itself
-                    if (closeButton && closeButton.contains(event.target as Node)) {
-                        return;
-                    }
                     card.classList.add('is-mobile-visible');
                 }
             });
 
+            // Remove the visible class on close button click
             if (closeButton) {
                 closeButton.addEventListener('click', (event) => {
-                    // Stop the card's click event from firing when closing
+                    // Stop the event from bubbling up to the card listener, which would re-open the overlay
                     event.stopPropagation();
                     card.classList.remove('is-mobile-visible');
                 });
