@@ -40,7 +40,7 @@ const defaultSlides: SlideData[] = [
     },
     {
         id: 2,
-        title: "Compromiso y Experiencia a tu Servicio",
+        title: "Compromiso y experiencia a tu servicio",
         description:
             "Profesionales unidos para defender tus derechos y acompañarte en cada etapa del proceso legal.",
         image: {

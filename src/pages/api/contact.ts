@@ -127,7 +127,7 @@ ${message}
         return new Response(
             JSON.stringify({
                 success: false,
-                message: "Error al enviar el mensaje. Por favor intente nuevamente.",
+                message: "Error al enviar el mensaje. Por favor, inténtelo de nuevo.",
             }),
             { status: 500 },
         );

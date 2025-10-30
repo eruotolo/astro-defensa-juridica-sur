@@ -11,14 +11,6 @@ interface TeamInterface {
     master?: string[];
 }
 
-interface TeamProcuradoresInterface {
-    name: string;
-    position: string;
-    img: ImageMetadata;
-    email?: string;
-    phone?: string;
-}
-
 import imgJohn from "../assets/images/teams/john-new.webp";
 import imgIsa from "../assets/images/teams/isabel-new.webp";
 import imgFer from "../assets/images/teams/fernando.webp";
@@ -37,7 +29,7 @@ const teamAbogados: TeamInterface[] = [
         master: [
             "Diplomado en Derecho Penal y Derecho Procesal Penal.",
             "Diplomado en Derecho Inmobiliario.",
-            "Curso Ley 20.000, que sanciona el trafico ilicito de estupefacientes y sustancias psicotropicas.",
+            "Curso Ley 20.000, que sanciona el tráfico ilícito de estupefacientes y sustancias psicotropicas.",
         ],
     },
     {
@@ -48,7 +40,7 @@ const teamAbogados: TeamInterface[] = [
         master: [
             "Diplomado en Derecho Laboral.",
             "Diplomado en Derecho Penal y Procesal Penal.",
-            "Curso accidentes laborales y enfermedades profesionales.",
+            "Curso de accidentes laborales y enfermedades profesionales.",
         ],
     },
     {
@@ -70,7 +62,7 @@ const teamProcuradores: TeamInterface[] = [
         name: "Ingrid Alvarado",
         position: "Procuradora",
         img: imgIngrid,
-        items: ["Tramitación posesiones efectivas", "Saneamiento de la pequeña propiedad raíz"],
+        items: ["Tramitación de posesiones efectivas", "Saneamiento de la pequeña propiedad raíz"],
     },
     {
         name: "Flavio Vargas",
@@ -80,7 +72,7 @@ const teamProcuradores: TeamInterface[] = [
     },
     {
         name: "Tatiana Uribe Maldonado",
-        position: "Psicóloga",
+        position: "Asistente Social",
         img: imgTatiana,
         items: [
             "Curso de Derechos de los Niños, Niñas y Adolescentes.",
@@ -101,7 +93,7 @@ const teamProcuradores: TeamInterface[] = [
         ],
     },
     {
-        name: "Fernanda Ibañez González",
+        name: "Fernanda Ibáñez González",
         position: "Psicóloga",
         img: imgFernanda,
         items: [
@@ -114,7 +106,7 @@ const teamProcuradores: TeamInterface[] = [
         ],
         master: [
             "Diplomado en Neuropsicología",
-            "Diplomado en Terapia Cognitivo Conductual en Adultos",
+            "Diplomado en Terapia Cognitivo-Conductual en Adultos",
             "Diplomado en Intervenciones en Infancia Media y Adolescencia",
         ],
     },
@@ -154,9 +146,24 @@ const teamProcuradores: TeamInterface[] = [
                             loading="lazy"
                         />
                         {/* Overlay mejorado */}
-                        <div class="absolute inset-0 bg-marron/75 opacity-0 group-hover:opacity-100 group-[.is-mobile-visible]:opacity-100 transition-opacity duration-300 flex flex-col items-center justify-start py-4 sm:py-5 xl:py-6 px-4 sm:px-5 xl:px-6 overflow-y-auto">
-                            <button class="team-card-close-btn absolute top-2 right-3 text-white lg:hidden z-20" aria-label="Cerrar">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+                        <div class="absolute inset-0 bg-marron/75 opacity-0 group-hover:opacity-100 group-[.is-mobile-visible]:opacity-100 transition-opacity duration-300 flex flex-col items-center justify-start py-4 sm:py-5 xl:py-6 px-4 sm:px-5 xl:px-6 overflow-y-auto pointer-events-none group-hover:pointer-events-auto group-[.is-mobile-visible]:pointer-events-auto z-10">
+                            <button
+                                class="team-card-close-btn absolute top-3 right-3 text-white lg:hidden z-20 bg-black/40 hover:bg-black/60 rounded-full p-2 transition-all duration-200 active:scale-95"
+                                aria-label="Cerrar"
+                            >
+                                <svg
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    width="24"
+                                    height="24"
+                                    viewBox="0 0 24 24"
+                                    stroke="currentColor"
+                                    stroke-width="2.5"
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                >
+                                    <line x1="18" y1="6" x2="6" y2="18" />
+                                    <line x1="6" y1="6" x2="18" y2="18" />
+                                </svg>
                             </button>
                             {/* Nombre */}
                             <h5 class="font-sans text-[18px] sm:text-[20px] xl:text-[22px] font-bold text-white text-center mb-3 xl:mb-4">
@@ -235,9 +242,24 @@ const teamProcuradores: TeamInterface[] = [
                             loading="lazy"
                         />
                         {/* Overlay mejorado */}
-                        <div class="absolute inset-0 bg-marron/75 opacity-0 group-hover:opacity-100 group-[.is-mobile-visible]:opacity-100 transition-opacity duration-300 flex flex-col items-center justify-start py-4 sm:py-5 xl:py-6 px-4 sm:px-5 xl:px-6 overflow-y-auto">
-                             <button class="team-card-close-btn absolute top-2 right-3 text-white lg:hidden z-20" aria-label="Cerrar">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+                        <div class="absolute inset-0 bg-marron/75 opacity-0 group-hover:opacity-100 group-[.is-mobile-visible]:opacity-100 transition-opacity duration-300 flex flex-col items-center justify-start py-4 sm:py-5 xl:py-6 px-4 sm:px-5 xl:px-6 overflow-y-auto pointer-events-none group-hover:pointer-events-auto group-[.is-mobile-visible]:pointer-events-auto z-10">
+                            <button
+                                class="team-card-close-btn absolute top-3 right-3 text-white lg:hidden z-20 bg-black/40 hover:bg-black/60 rounded-full p-2 transition-all duration-200 active:scale-95"
+                                aria-label="Cerrar"
+                            >
+                                <svg
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    width="24"
+                                    height="24"
+                                    viewBox="0 0 24 24"
+                                    stroke="currentColor"
+                                    stroke-width="2.5"
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                >
+                                    <line x1="18" y1="6" x2="6" y2="18" />
+                                    <line x1="6" y1="6" x2="18" y2="18" />
+                                </svg>
                             </button>
                             {/* Nombre */}
                             <h5 class="font-sans text-[18px] sm:text-[20px] xl:text-[22px] font-bold text-white text-center mb-3 xl:mb-4">
@@ -281,28 +303,83 @@ const teamProcuradores: TeamInterface[] = [
 </div>
 
 <script>
-    document.addEventListener('DOMContentLoaded', () => {
-        const teamCards = document.querySelectorAll('.team-card');
+    document.addEventListener("DOMContentLoaded", () => {
+        const teamCards = document.querySelectorAll(".team-card");
         const DESKTOP_BREAKPOINT = 1024; // Tailwind's lg breakpoint
 
-        teamCards.forEach(card => {
-            const closeButton = card.querySelector('.team-card-close-btn');
+        const closeAll = () => {
+            teamCards.forEach((c) => c.classList.remove("is-mobile-visible"));
+        };
 
-            // Add the visible class on card click (for mobile)
-            card.addEventListener('click', () => {
-                if (window.innerWidth < DESKTOP_BREAKPOINT) {
-                    card.classList.add('is-mobile-visible');
-                }
-            });
+        teamCards.forEach((card) => {
+            const imageContainer = card.querySelector(".relative.cursor-pointer");
+            const overlay = card.querySelector(".absolute.inset-0");
+            const closeButton = card.querySelector(".team-card-close-btn");
 
-            // Remove the visible class on close button click
+            // Abrir (solo móvil) al tocar la imagen/contenedor
+            if (imageContainer) {
+                const openHandler = (event: MouseEvent | TouchEvent) => {
+                    if (window.innerWidth < DESKTOP_BREAKPOINT) {
+                        if (!card.classList.contains("is-mobile-visible")) {
+                            event.stopPropagation();
+                            card.classList.add("is-mobile-visible");
+                            card.setAttribute("aria-expanded", "true");
+                        }
+                    }
+                };
+                imageContainer.addEventListener("click", openHandler);
+                imageContainer.addEventListener("touchstart", openHandler, { passive: true });
+            }
+
+            // Cerrar con botón
             if (closeButton) {
-                closeButton.addEventListener('click', (event) => {
-                    // Stop the event from bubbling up to the card listener, which would re-open the overlay
+                closeButton.addEventListener("click", (event) => {
+                    event.preventDefault();
                     event.stopPropagation();
-                    card.classList.remove('is-mobile-visible');
+                    event.stopImmediatePropagation();
+                    card.classList.remove("is-mobile-visible");
+                    card.setAttribute("aria-expanded", "false");
                 });
             }
+
+            // Cerrar tocando el fondo del overlay (no sus hijos)
+            if (overlay) {
+                overlay.addEventListener("click", (event) => {
+                    if (window.innerWidth < DESKTOP_BREAKPOINT) {
+                        if (event.target === overlay) {
+                            event.stopPropagation();
+                            card.classList.remove("is-mobile-visible");
+                            card.setAttribute("aria-expanded", "false");
+                        }
+                    }
+                });
+            }
+
+            // Evitar cierre por clicks dentro del contenido
+            const overlayContent = overlay?.querySelectorAll(
+                "h5, h6, ul, li, button, svg, path, line",
+            );
+            overlayContent?.forEach((el) => {
+                el.addEventListener("click", (event) => event.stopPropagation());
+            });
+        });
+
+        // Cerrar con Escape
+        document.addEventListener("keydown", (e) => {
+            if (e.key === "Escape") closeAll();
+        });
+
+        // Cerrar al pasar a desktop o tras resize
+        let resizeTimer: number | undefined;
+        window.addEventListener("resize", () => {
+            if (resizeTimer) {
+                clearTimeout(resizeTimer);
+            }
+            resizeTimer = window.setTimeout(() => {
+                if (window.innerWidth >= DESKTOP_BREAKPOINT) {
+                    closeAll();
+                }
+            }, 200);
         });
     });
 </script>
