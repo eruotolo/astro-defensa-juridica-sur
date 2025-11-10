@@ -96,8 +96,6 @@ const teamProcuradores: TeamInterface[] = [
         position: "Psicóloga",
         img: imgFernanda,
         items: [
-            "Tramitación de documentos en registros civiles",
-            "Gestión de multas y sanciones",
             "Autoagresiones y conducta suicida en NNA",
             "Derechos sexuales, reproductivos y de vida libre de violencia para personas con discapacidad",
             "Protocolos actualizados en violencia intrafamiliar y consumo problemático de alcohol",
@@ -355,9 +353,7 @@ const teamProcuradores: TeamInterface[] = [
             }
 
             // Evitar cierre por clicks dentro del contenido (excepto botón cerrar)
-            const overlayContent = overlay?.querySelectorAll(
-                "h5, h6, ul, li",
-            );
+            const overlayContent = overlay?.querySelectorAll("h5, h6, ul, li");
             overlayContent?.forEach((el) => {
                 el.addEventListener("click", (event) => event.stopPropagation());
             });
